@@ -1,0 +1,1516 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% The cruft above tells TeX editors (e.g. TeXShop) what this file contains.
+
+%% Only tested with XeLaTeX.
+%\RequireXeTeX
+
+%% Unicode normalization of input text.
+%%  0: no normalization (default)
+%%  1: normalize to NFC
+%%  2: normalize to NFD
+\XeTeXinputnormalization 1
+
+%% FIle prefix.
+%% This is the unchanging part of all file names for this document.
+\def \FILEPREFIX {lingnote-verbmorphs}
+
+%% The Memoir class.
+%% The manual is memman.pdf.
+\documentclass[12pt,letterpaper,oneside,article]{memoir}
+
+%% LaTeX3 command parsing.
+%% Should be used by all modern, right thinking LaTeX programmers.
+\usepackage{xparse}
+
+%%%
+%%% Memoir configuration.
+%%%
+
+\input{config/\FILEPREFIX-memconf}
+
+%%%
+%%% Font configuration.
+%%%
+
+\input{config/\FILEPREFIX-fonts}
+\input{config/\FILEPREFIX-fonts-symbols}
+
+%%%
+%%% Bibliography configuration.
+%%%
+
+\input{config/\FILEPREFIX-bib}
+
+%%%
+%%% Example and glossing configuration.
+%%%
+
+\input{config/\FILEPREFIX-expex}
+
+%%%
+%%% Other packages.
+%%%
+\input{config/\FILEPREFIX-other}
+
+%%%
+%%% Hyperlinks and crossreferences.
+%%%
+
+\input{config/\FILEPREFIX-hyper}
+
+%%%
+%%% Fancy lists.
+%%%
+
+\input{config/\FILEPREFIX-enumitem}
+
+%%%
+%%% Miscellaneous macrology.
+%%%
+
+\input{config/\FILEPREFIX-macrology}
+
+%%%ͤͤ
+%%% Morphology colour highlighting.
+%%%
+
+%\input{config/\FILEPREFIX-colours}
+
+%%%
+%%% The document.
+%%%
+\begin{document}
+
+\title{Catalogue of Tlingit verb morphemes}
+\author{\textit{Dzéiwsh} James A.\ Crippen}
+
+\maketitle
+\tableofcontents*
+
+\clearpage
+\section{Introduction}\label{sec:intro}
+
+This is a catalogue of morphemes in Tlingit verbs.
+It is inspired by \citeauthor{krauss:1981a}’s \textit{Eyak morpheme list} \parencite{krauss:1981a} for the Eyak language but goes beyond his approach to include allomorphs and common combinations of morphemes as well as examples and cross references.
+It is meant to be a reference aid for language study and linguistic analysis and is not intended to be a comprehensive description of any particular grammar phenomenon.
+
+This catalogue is organized into two parts:
+section \ref{sec:alphalist} on page \pageref{sec:alphalist} is an alphabetic list of verb morphemes
+and section \ref{sec:inventory} on page \pageref{sec:inventory} is an inventory of verb morphemes organized by their positions and related functions in verbs.
+The alphabetic list allows the reader to look up morphemes by phonological form (spelling) without needing to know a morpheme’s meaning or function.
+The position and function list allows the reader to look up morphemes by meaning and function without needing to know a morpheme’s form or allomorphy.
+
+\subsection{Alphabet ordering}\label{sec:intro-alpha}
+
+The alphabetic listing follows a conventional Latin alphabet ordering, so for example \fm{aa} precedes \fm{ach} and \fm{ee} precedes \fm{ei}.
+Letters with underline diacritics (\fm{g̱}, \fm{ḵ}, \fm{x̱}) are listed immediately after the corresponding letters without an underline diacritic (\fm{g}, \fm{k}, \fm{x}) so for example \fm{ga} precedes \fm{g̱a}.
+The two letters \fm{y} and \fm{ÿ} are not distinguished in order, so for example \fm{ÿa} precedes \fm{ye} precedes \fm{ÿi}.
+Letters followed by an apostrophe – i.e.\ the ejective consonants – always follow letters without so for example \fm{ḵa} precedes \fm{ḵʼa}.
+
+\begin{itemize}
+\item	\fm{a},
+	\fm{ch},
+	\fm{d},
+	\fm{e},
+	\fm{g},
+	\fm{g̱},
+	\fm{h},
+	\fm{i},
+	\fm{j},
+	\fm{k},
+	\fm{ḵ},
+	\fm{l},
+	\fm{m},
+	\fm{n},
+	\fm{o},
+	\fm{s},
+	\fm{t},
+	\fm{u},
+	\fm{w},
+	\fm{x},
+	\fm{x̱},
+	\fm{y}/\kern-0.125ex\fm{ÿ},
+	\fm{ʼ}
+\end{itemize}
+
+Symbols other than letters are given after the alphabetic entries.
+This includes symbols like \fm{μ} (vowel length), \fm{H} (high tone), and ⊗ (consonant deletion). 
+
+\subsection{Morpheme representations}\label{sec:intro-morphrep}
+
+Different kinds of morphemes are represented in different ways.
+Tlingit has both affixes and clitics; among affixes there are both prefixes and suffixes and among clitics there are both proclitics and enclitics.
+Prefixes are represented like \fm{x-} with a hyphen “-” following the form \fm{x} and likewise suffixes are represented like \fm{-y} with a hyphen preceding the form \fm{y}.
+Proclitics are represented like \fm{x=} with an equals sign “=” following the form \fm{x} and likewise enclitics are represented like \fm{=y} with an equals sign preceding the form \fm{y}.
+This representation of affixes and clitics is consistent with the widely accepted \textit{Leipzig glossing rules} \parencite{comrie:2008}.
+
+Some morphemes in Tlingit verbs are ‘smaller’ than even a single vowel or consonant.
+Most such morphemes involve tone or lengthening of a vowel or sometimes both.
+Tone is represented independently of a vowel as \fm{H} for high tone and \fm{L} for low tone.
+Lengthening of a vowel is represented independently of the base vowel as \fm{μ} (Greek letter mu, the standard symbol for a mora).
+Morphemes consisting of tone or vowel lengthening are given as though they are prefixes or suffixes depending on their position, but it should be understood that they are not actually separate from the  vowel segments that host them.
+One example is the vowel lengthening allomorph \fm{μ-} of the stative prefix \fm{ya-} \~\ \fm{i-} as in \fm{x̱aatéen} ‘I can see him/her/it’ versus \fm{x̱at yatéen} ‘s/he/it can see me’.
+In the form \fm{x̱aatéen} ‘I can see him/her/it’ the stative prefix appears as lengthening of the vowel in the \fm{x̱aa} syllable which would otherwise be short \fm{x̱a} as in \fm{x̱ax̱á} ‘I am eating him/her/it’.
+Compare \fm{x̱a-μ-\rt[²]{tin}-μμH} for \fm{x̱aatéen} ‘I can see him/her/it’ with the \fm{μ-} stative prefix versus \fm{x̱a-\rt[²]{x̱a}-μH} for \fm{x̱ax̱á} ‘I am eating him/her/it’ without the \fm{μ-} stative prefix.
+
+Beyond single morphemes like affixes and clitics, this catalogue also includes common combinations of morphemes as they appear within a verb word.
+These combinations are given without a hyphen or equals sign because they are not single morphemes; instead their definition is a sequence of separate morphemes and the reader should refer to each of the individual elements separately.
+As well as the lack of a hyphen or equals sign in their listing, all entries of combinations of morphemes can be identified by the “≡ \fm{a-b-c-…}” in the beginning of their definition.
+This means that the combination is equivalent to “≡” the sequence of morphemes given.
+For example, the form \fm{dli} ≡ \fm{d-l-i-} is the combination of the \fm{d-} voice prefix, the \fm{l-} valency prefix, and the \fm{i-} stative prefix.
+Having identified \fm{dli} as a combination of morphemes, the reader can then look at the individual entries for \fm{d-}, \fm{l-}, and \fm{i-}.
+This is illustrated by the following example entry:
+
+\begin{morphdesc}
+\item[dli]
+	≡ \fm{d-l-i-}
+	combination of \fm{d-} voice prefix,
+		\fm{l-} (or \fm{lˢ-}) valency prefix,
+		and \fm{i-} stative prefix
+	\begin{itemize}
+	\item	\fm{wutulitlʼíx} (pfv; tr, \fm{∅}, ach) ‘we made it dirty’ with \fm{l-i-}
+		\versus{\fm{sh wutudlitlʼíx} (pfv) ‘we made ourselves dirty’ with \fm{d-l-i-}}
+	\end{itemize}
+\end{morphdesc}
+
+\subsection{Lack of null morphemes}\label{sec:intro-null}
+
+Null (zero) morphemes have been omitted from this catalogue.
+The purpose of this catalogue is to provide a quick reference for identifying morphemes based on their phonological forms and since null morphemes have no phonological form they do not fit within the purpose of this document.
+Null morphemes are really just artificial ‘bookkeeping’ elements used for linguistic analysis and do not actually exist in the language, so it is philosophically questionable to ascribe meanings to them.
+In addition, it is possible in principle to have a contrast between every overt morpheme and a corresponding null morpheme representing the absence of the overt morpheme.
+Compare the following two analyses of the same verb form \fm{toox̱á} ‘we are eating him/her/it’ in (\ref{ex:intro-null-morphemes}) where (\ref{ex:intro-null-morphemes-nonull}) has only overt morphemes and (\ref{ex:intro-null-morphemes-lotsanull}) includes null morphemes.
+The analysis in (\ref{ex:intro-null-morphemes-lotsanull}) has seven additional null affixes for the lack of an overt object, lack of overt irrealis, lack of overt aspect/conjugation, lack of overt modality, lack of a repetitive suffix, lack of overt past tense, and lack of overt clause type.
+
+\pex\label{ex:intro-null-morphemes}%
+\a\label{ex:intro-null-morphemes-nonull}%
+\begingl
+	\gla	\rlap{Toox̱á.} @ {} @ {} //
+	\glb	too- \rt[²]{x̱a} -μH //
+	\glc	\xx{1pl·s}- \rt[²]{eat} -\xx{var} //
+	\gld	\rlap{\xx{impfv}.we.eat} {} {} //
+	\glft	‘We are eating him/her/it.’
+		//
+\endgl
+\a\label{ex:intro-null-morphemes-lotsanull}%
+\begingl
+	\gla	\rlap{Toox̱á.} @ {} @ {} @ {} @ {} @ {} @ {} @ {} @ {} @ {} //
+	\glb	∅- ∅- ∅- ∅- too- \rt[²]{x̱a} -μH -∅ -∅ -∅ //
+	\glc	\xx{3·o}- \xx{real}- \xx{impfv}- \xx{nmod}- \xx{1pl·s}-
+		\rt[²]{eat} -\xx{var} -\xx{nrep} -\xx{npast} -\xx{nsub} //
+	\gld	\rlap{\xx{impfv}.we.eat} {} {} {} {} {} {} {} {} {} //
+	\glft	‘We are eating him/her/it.’
+		//
+\endgl
+\xe
+
+Although null morphology like in (\ref{ex:intro-null-morphemes-lotsanull}) can be useful for certain kinds of analysis, for most purposes it is needlessly complex.
+In addition, listing all of the possible null morphemes in Tlingit verbs here would at least double the size of this document, making it much less useful as a quick reference.
+The sole exception to the avoidance of null morphemes is the use of the symbol \fm{∅} to represent the distinct conjugation class that is characterized by the absence of one of the \fm{n-}, \fm{g̱-}, or \fm{g-} prefixes.
+This \fm{∅} is not actually a morpheme but rather a label for the set of verbs that lack \fm{n-}, \fm{g̱-}, or \fm{g-} in certain forms where one would otherwise be expected (e.g.\ imperative forms like \fm{gashí!} ‘sing it!’
+ with \fm{ga-} versus \fm{x̱á!} ‘eat it!’ with nothing).
+
+\subsection{Abbreviations and verb lexical information}\label{sec:intro-abbrev}
+
+Abbreviations have been generally avoided in favour of complete names in English.
+The only major exception is the representation of verb lexical information.
+A verb used in an example is given with its grammatical and lexical information in parentheses before the English translation.
+The first use of a verb in an example is followed in parentheses by the grammatical aspect, then a semicolon, and then most of the important lexical information separated by commas. The second use of the verb (usually in a form contrasting with the first form) has only the grammatical aspect in parentheses and the rest of the information is implicitly the same.
+Consider the following example:
+
+\begin{itemize}
+\item	\fm{at wutusi.ée} (pfv; tr, \fm{g̱}, \fm{-μμH} act) ‘we cooked something’
+	\versus{\fm{wutusi.ée} (pfv) ‘we cooked him/her/it’}
+\end{itemize}
+
+Immediately following the form “\fm{at wutusi.ée} is the parenthesized list “(pfv; tr, \fm{g̱}, \fm*{-μμH} act)”.
+This list has two parts: before the semicolon “;” there is the grammatical aspect of the verb form and then after the semicolon there is the lexical information of the verb.
+The grammatical aspect “pfv” indicates that the form is perfective aspect.
+The “tr” indicates that the verb is transitive (takes both subject and object arguments).
+The \fm{g̱} means that this verb is a member of the \fm{g̱} conjugation class and so for instance will have the prefix \fm{g̱-} in an imperative mood form and the preverb \fm{yei=} in a progressive aspect form.
+The “\fm{-μμH} act” indicates the verb’s eventuality class: the verb is an activity verb and its imperfective aspect forms will normally have \fm{-μμH} stem variation with a long vowel and high tone.
+The second form \fm{wutusi.ée} is based on the same verb lexical item with the same lexical information, so for brevity only its grammatical aspect is given in parentheses.
+Contrast this with the next example that has two different verb lexical items:
+
+\begin{itemize}
+\item	\fm{at wutusi.ée} (pfv; tr, \fm{g̱}, \fm{-μμH} act) ‘we cooked something’
+	\versus{\fm{at wutuwax̱áa} (pfv; tr, \fm{∅}, \fm{-μH} act) ‘we ate something’}
+\end{itemize}
+
+Here the second form “\fm{at wutuwax̱áa}” is a different verb as can be seen by the stem \fm{x̱áa} (thus root \fm{\rt[²]{x̱a}} ‘eat’) which is unrelated to the stem \fm{.ée} (root \fm{\rt[¹]{.i}} ‘cooked’).
+Since this second form is a different verb it is given with its full list of verb lexical information.
+Comparing the two we see for example that where the verb of “\fm{at wutusi.ée}” belongs to the \fm{g̱} conjugation class, the verb of “\fm{at wutuwax̱áa}” belongs to the \fm{∅} conjugation class.
+In addition, although both are activity verbs given “act”, the verb of “\fm{at wutusi.ée}” has \fm{-μμH} long high tone stem variation in its imperfective aspect form (e.g.\ \fm{at tusi.ée} ‘we are cooking something’) where instead the verb of “\fm{at wutuwax̱áa}” has \fm{-μH} short high tone stem variation in its imperfective aspect form (e.g.\ \fm{at toox̱á} ‘we are eating something’).
+
+The following lists give the abbreviations used for the different parts of verb form information.
+These lists are meant to be exhaustive so if there is an abbreviation used in the document that is not listed here, please report it so it can be corrected.
+
+\vspace{\baselineskip}
+\noindent
+List of grammatical aspect, mood, tense, and clause type abbreviations:
+\begin{description}[font={\normalfont}, style=sameline, labelindent=\parindent, labelwidth=3em, leftmargin=!]
+\item[admon]	admonitive mood
+\item[cond]	conditional mood
+\item[ctng]	contingent mood
+\item[csec]	consecutive aspect
+\item[hab]	habitual aspect
+\item[hort]	hortative mood
+\item[imp]	imperative mood
+\item[impfv]	imperfective aspect
+\item[past]	past tense
+\item[pfv]	perfective aspect
+\item[pot]	potential mood
+\item[prog]	progressive aspect
+\item[prosp]	prospective (‘future’) aspect
+\item[rel]	relative clause type
+\item[rep]	repetitive iterativity
+\item[rlzn]	realizational aspect
+\item[sub]	subordinate clause type
+\end{description}
+
+\vspace{\baselineskip}
+\noindent
+List of transitivity abbreviations:
+\begin{description}[font={\normalfont}, style=sameline, labelindent=\parindent, labelwidth=4em, leftmargin=!]
+\item[impers]		impersonal: no subject and no object
+\item[subj intr]	subject intransitive: subject but no object (≡ unergative)
+\item[obj intr]		object intransitive: object but no subject (≡ unaccusative)
+\item[tr]		transitive: both subject and object
+\end{description}
+
+\vspace{\baselineskip}
+\noindent
+List of conjugation class symbols:
+\begin{description}[font={\normalfont}, style=sameline, labelindent=\parindent, labelwidth=3em, leftmargin=!]
+\item[\fm{n}]	\fm{n} conjugation class\newline
+		reflected by \fm{n-} prefix in imperative mood
+\item[\fm{g̱}]	\fm{g̱} conjugation class\newline
+		reflected by \fm{g̱-} prefix in imperative mood\newline
+		and \fm{yei=} preverb in prospective aspect
+\item[\fm{g}]	\fm{g} conjugation class\newline
+		reflected by \fm{g-} prefix in imperative mood\newline
+		and \fm{kei=} preverb in prospective aspect
+\item[\fm{∅}]	\fm{∅} conjugation class\newline
+		reflected by absence of prefix in imperative mood
+\end{description}
+
+\vspace{\baselineskip}
+\noindent
+List of eventuality class abbreviations:
+\begin{description}[font={\normalfont}, style=sameline, labelindent=\parindent, labelwidth=3em, leftmargin=!]
+\item[act]	activity\newline
+		has an imperfective aspect form without stative prefix
+		and without repetitive suffix, does not require motion derivation
+\item[state]	state\newline
+		has an imperfective aspect form with stative prefix
+		and without repetitive suffix, does not require motion derivation
+\item[ach]	achievement\newline
+		does not have imperfective aspect form without repetitive suffix,
+		does not require motion derivation
+\item[mot]	motion\newline
+		does not have imperfective aspect form without repetitive suffix
+		and requires motion derivation
+\end{description}
+
+\clearpage
+\section{Alphabetic listing of verb morphemes}\label{sec:alphalist}
+
+\subsection{A}\label{sec:alphalist-a}
+\begin{morphdesc}[series=alphalist]
+\item[a-]
+	argument marking prefix in object prefix position
+	\begin{enumerate}
+	\item	3>3 agreement of transitive verb: third person subject and third person object
+		\begin{itemize}
+		\item	\fm{aawax̱áa} (pfv; tr, \fm{∅}, \fm{-μH} act) ‘s/he/it ate it’
+				\morphemes{\fm{a-μw-wa-\rt[²]{x̱a}-μμH}
+					using \fm{a-} 3>3}
+			\versus{\fm{wutuwax̱áa} ‘we ate it’}
+				\morphemes{\fm{wu-tu-wa-\rt[²]{x̱a}-μμH}
+					using \fm{tu-} ‘we’}
+		\end{itemize}
+	\item	indefinite nonhuman object of some transitive verbs
+			instead of \fm{at=};
+		verbs that use \fm{a-} in this way usually also use \fm{a-} 3>3;
+		the reason for using \fm{a-} instead of \fm{at=} is still unclear
+		\begin{itemize}
+		\item	\fm{alʼóon} (impfv; tr, \fm{n}, \fm{-μμH} act) ‘s/he/it is hunting something’
+				\morphemes{\fm{a-\rt[²]{lʼuᴴn}-μμH}
+					using \fm{a-} ‘something, stuff’}
+				\andnot{\fm[*]{at lʼóon} ‘s/he/it is hunting something’
+					using \fm{at=} ‘sth., stuff’}
+			\versus{\fm{alʼóon} (impfv) ‘s/he/it is hunting it’}
+				\morphemes{\fm{a-\rt[²]{lʼuᴴn}-μμH} using \fm{a-} 3>3}
+				\notealso{compare \fm{g̱áx̱ alʼóon} (impfv) ‘s/he/it is hunting rabbits’}
+				\notealso{(\fm{g̱áx̱ alʼóon} cannot mean
+					‘s/he/it is hunting something rabbits’)}
+		\end{itemize}
+	\item	indefinite human subject of subject intransitive verbs
+			instead of \fm{du-};
+		probably all subject intransitive verbs use \fm{a-} rather than \fm{du-}
+		\begin{itemize}
+		\item	\fm{ax̱éxʼw} (impfv; subj intr, \fm{n}, \fm{-μH} act) ‘people are sleeping’
+				\morphemes{\fm{a-\rt[¹]{x̱ʼexʼw}-μH}
+					using \fm{a-} ‘someone, people’}
+				\andnot{\fm[*]{dux̱éxʼw} ‘people are sleeping’
+					using \fm{du-} ‘someone, people’}
+			\versus{\fm{toox̱éxʼw} (impfv) ‘we are sleeping’}
+				\morphemes{\fm{too-\rt[¹]{x̱ʼexʼw}-μH}
+					using \fm{too-} ‘we’}
+		\item	\fm{aawa.aat} (pfv; subj intr, \fm{n}, mot) ‘people went’
+				\morphemes{\fm{a-μw-wa-\rt[¹]{.at}-μμL}
+					using \fm{a-} ‘someone, people’}
+				\andnot{\fm[*]{wuduwa.aat} ‘people went’
+					using \fm{du-} ‘someone, people’}
+			\versus{\fm{wutuwa.aat} (pfv) ‘we went’}
+				\morphemes{\fm{wu-tu-wa-\rt[¹]{.at}-μμL}
+					using \fm{tu-} ‘we’}
+		\end{itemize}
+	\item	nonreferential expletive (filler) object; does not refer to anything
+		\begin{itemize}
+		\item	\fm{awdigaan} (pfv; impers, \fm{g̱}, ach) ‘it sunshined’
+				\morphemes{\fm{a-w-d-i-\rt[²]{gan}-μμL}
+					using \fm{a-} expletive object and \fm{d-} passive}
+				\andnot{\fm[*]{g̱agaan awdigaan} ‘sun sunshined’}
+		\end{itemize}
+	\end{enumerate}
+
+\item[aa=]
+	partitive proclitic
+	\begin{enumerate}
+	\item	partitive third person object
+	\item	partitive third person subject
+	\end{enumerate}
+
+\item[aawa]
+	≡ \fm{a-μw-wa-}
+	combination of \fm{a-} argument marking prefix,
+		\fm{μw-} perfective prefix,
+		and \fm{wa-} stative prefix
+	\begin{itemize}
+	\item	\fm{aawajáḵ} (pfv; tr, \fm{∅}, ach) ‘s/he/it killed him/her/it’
+			\morphemes{\fm{a-μw-wa-\rt[²]{jaḵ}-μH}}
+	\end{itemize}
+
+\item[ach=]
+	variant form of \fm{ash=} object proclitic;
+	probably derived from \fm{á} third person pronoun + \fm{-ch} ergative suffix
+		or \fm{sh} reflexive pronoun
+	\begin{enumerate}
+	\item	
+	\item	
+	\end{enumerate}
+
+\item[as=]
+	allomorph of \fm{has=} human pluralizer for third person subject or object;
+	mostly occurs in Southern \&\ Tongass communities
+	\begin{itemize}
+	\item	\fm{as dustaaÿch} (hab; tr, \fm{∅}, ach) “they would boil it” (Tongass dialect)\newline
+			\parencite[24.80]{leer:1978}
+			\morphemes{\fm{as=du-d-s-\rt[¹]{taᴸ}-μμ-ÿ-ch}}
+		\versus{\fm{has dustáaych} ‘they would boil it’} (Northern dialect)
+			\morphemes{\fm{has=du-d-s-\rt[¹]{taᴸ}-μμH-ÿ-ch}}
+	\end{itemize}
+
+\item[ash=]
+	object proclitic;
+	probably derived from \fm{á} third person pronoun + \fm{sh} reflexive pronoun
+		or \fm{-ch} ergative suffix
+	\begin{enumerate}
+	\item	third person proximate human object
+	\item	special reflexive object
+	\end{enumerate}
+
+\item[at=]
+	indefinite nonhuman object ‘something, stuff’;
+	derived from noun \fm{át} ‘thing’
+	(compare \fm{át áwé} ‘it is a thing, it is something’);
+	see also \fm{a-} which is used instead of \fm{at=} with some verbs
+	\begin{itemize}
+	\item	\fm{at wutusiteen} (pfv; tr, \fm{g̱}, ach) ‘we saw something’
+			\morphemes{\fm{at=wu-tu-s-i-\rt[²]{tin}-μμL} using \fm{at=} ‘something, stuff’}
+		\versus{\fm{wutusiteen} (pfv) ‘we saw him/her/it’}
+			\morphemes{\fm{wu-tu-s-i-\rt[²]{tin}-μμL} using third person object (no prefix)}
+	\item	\fm{at wusiteen} (pfv; tr, \fm{g̱}, ach) ‘s/he/it saw something’
+			\morphemes{\fm{at=wu-s-i-\rt[²]{tin}-μμL} using \fm{at=} ‘something, stuff’}
+		\versus{\fm{awsiteen} (pfv) ‘s/he/it saw him/her/it’}
+			\morphemes{\fm{a-w-s-i-\rt[²]{tin}-μμL} using \fm{a-} 3>3}
+	\end{itemize}
+
+\item[aw]
+	≡ \fm{a-w-}
+	combination of \fm{a-} argument marking prefix
+		and \fm{w-} perfective prefix
+	\begin{itemize}
+	\item	\fm{awsi.ée} (pfv; tr, \fm{∅}, \fm{-μμH} act) ‘s/he/it cooked him/her/it’
+			\morphemes{\fm{a-w-s-i-\rt[¹]{.i}-μμH}}
+	\end{itemize}
+
+\item[awu]
+	≡ \fm{a-wu-}
+	combination of \fm{a-} argument marking prefix
+		and \fm{wu-} perfective prefix;
+	occurs in negative, past tense, and subordinate clause forms where \fm{ÿa-} \~\ \fm{i-}
+		stative prefix is suppressed;
+	compare \fm{aawa} ≡ \fm{a-μw-wa-} and \fm{aw} ≡ \fm{a-w-}
+	\begin{itemize}
+	\item	\fm{tléil awux̱á} (neg pfv; tr, \fm{∅}, \fm{-μH} act) ‘s/he/it didn’t eat him/her/it’
+			\morphemes{\fm{tléil a-wu-\rt[²]{x̱a}-μH}
+				lacking \fm{wa-} stative}
+		\versus{\fm{aawax̱áa} (pfv) ‘s/he/it ate him/her/it’}
+			\morphemes{\fm{a-μw-wa-\rt[²]{x̱a}-μμH}
+				using \fm{wa-} stative}
+	\item	\fm{awux̱áayin} (past pfv; tr, \fm{∅}, \fm{-μH} act) ‘s/he/it had eaten him/her/it’
+			\morphemes{\fm{a-wu-\rt[²]{x̱a}-μμH-yin}
+				using \fm{-yin} past
+				and lacking \fm{wa-} stative}
+		\versus{\fm{aawax̱áa} (pfv) ‘s/he/it ate him/her/it’}
+			\morphemes{\fm{a-μw-wa-\rt[²]{x̱a}-μμH}
+				using \fm{wa-} stative}
+	\item	\fm{awux̱aayí} (sub pfv; tr, \fm{∅}, \fm{-μH} act) ‘while s/he/it ate him/her/it’
+			\morphemes{\fm{a-wu-\rt[²]{x̱a}-μμL-yí}
+				using \fm{-yí} subordinate
+				and lacking \fm{wa-} stative}
+		\versus{\fm{aawax̱áa} (pfv) ‘s/he/it ate him/her/it’}
+			\morphemes{\fm{a-μw-wa-\rt[²]{x̱a}-μμH}
+				using \fm{wa-} stative}
+	\end{itemize}
+
+\item[ax̱=]
+	allomorph ‘my’ of \fm{x̱at=} ‘me’ first person singular object from possessive pronoun
+		(compare \fm{ax̱ keidlí áwé} ‘it is my dog’),
+	only used as possessor of incorporated nouns;
+	some speakers disprefer \fm{ax̱=} and only use \fm{x̱at=}
+	\begin{itemize}
+	\item	\fm{ax̱ shalxáash} (impfv; tr, \fm{n}, \fm{-μμH} act) ‘s/he is cutting my hair’
+			\morphemes{\fm{ax̱=sha-l-\rt[²]{xash}-μμH} using \fm{ax̱=} ‘my’}
+		\versus{\fm{x̱at shalxáash} (impfv) ‘s/he is cutting my hair’}
+			\morphemes{\fm{x̱at=sha-l-\rt[²]{xash}-μμH} using \fm{x̱at=} ‘me’}
+	\end{itemize}
+\end{morphdesc}
+
+\subsection{D}\label{sec:alphalist-d}
+\begin{morphdesc}[resume*=alphalist]
+\item[d-, da-]
+	voice prefix of classifier
+	\begin{enumerate}
+	\item	middle voice
+	\item	passive voice
+	\item	antipassive voice
+	\end{enumerate}
+
+\item[daak=]
+	directional preverb indicating out to sea away from land;
+	derived from directional noun \fm{dáak} ‘out at sea’
+		(compare \fm{dákde} ‘seaward’)
+\item[daaḵ=]
+	directional preverb ‘inland (away from water body)’;
+	derived from directional noun \fm{dáaḵ} ‘inland’
+		(compare \fm{dáḵde=} ‘to inland’, \fm{daḵká} ‘on inland’)
+\item[dag̱a-]
+	allomorph of \fm{dax̱=} distributive pluralizer or non-human pluralizer;
+	position of this allomorph is uncertain as it is only attested in forms without
+	argument or aspectual prefixes
+
+\item[dáḵde=]
+	directional preverb \fm{daaḵ=} ‘inland’ with allative postposition \fm{-dé} \~\ \fm{-de} ‘toward’
+
+\item[dax̱=]
+	distributive pluralizer or non-human pluralizer;
+	can occur before human pluralizer \fm{has=} but not after
+
+\item[deik=]
+	variant form of \fm{daak=} ‘out to sea’ in Southern and Transitional Northern communities;
+	the reason for using \fm{deik=} versus \fm{daak=} is still unclear
+	\begin{itemize}
+	\item	\fm{deik ḵoowatín} (pfv; subj intr, \fm{∅}; ach+mot) ‘he has gotten vision’
+		\parencite[06/212]{leer:1973}\newline
+		versus \fm{daaḵ ḵoowatín} (pfv) ‘he has gotten vision’
+	\end{itemize}
+
+\item[deiḵ=]
+	variant form of \fm{daaḵ=} ‘inland’ in Southern and Transitional Northern communities;
+	the reason for using \fm{deiḵ=} versus \fm{daaḵ=} is still unclear
+	\begin{itemize}
+	\item	\fm{i chkáx̱ deiḵ tí} (imp; tr, \fm{∅}; mot) ‘put it (glove) on your hand’
+		(Southern dialect) %\newline
+		\parencite[05/79]{leer:1973}
+		\versus{\fm{i jikáx̱ daaḵ tí} (imp) ‘put it (glove) on your hand’ (Northern dialect)}
+	\end{itemize}
+
+\item[di]
+	≡ \fm{d-i-}
+	combination of \fm{d-} voice prefix
+		and \fm{i-} stative prefix
+	\begin{itemize}
+	\item	\fm{tuwatéen} (impfv; tr, \fm{∅}, \fm{-μμH} state) ‘we can see it’
+			\morphemes{\fm{tu-wa-\rt[²]{tin}-μμH}}
+		\versus{\fm{sh tuditéen} (impfv) ‘we can see ourselves’}
+			\morphemes{\fm{sh=tu-d-i-\rt[²]{tin}-μμH}
+				using \fm{sh=} reflexive and \fm{d-} middle voice}
+	\end{itemize}
+
+\item[dli]
+	≡ \fm{d-l-i-}
+	combination of \fm{d-} voice prefix,
+		\fm{l-} (or \fm{lˢ-}) valency prefix,
+		and \fm{i-} stative prefix
+	\begin{itemize}
+	\item	\fm{wutulitlʼíx} (pfv; tr, \fm{∅}, ach) ‘we made it dirty’
+			\morphemes{\fm{wu-tu-l-i-\rt[¹]{tlʼix}-μH}}
+		\versus{\fm{sh wutudlitlʼíx} (pfv) ‘we made ourselves dirty’}
+			\morphemes{\fm{sh=wu-tu-d-l-i-\rt[¹]{tlʼix}-μH}
+				using \fm{sh=} reflexive and \fm{d-} middle voice}
+	\end{itemize}
+
+\item[du-]
+	\begin{enumerate}
+	\item	indefinite human subject of transitive verbs
+		\begin{itemize}
+		\item	\fm{x̱at wududziteen} (pfv; tr, \fm{g̱}, ach) ‘someone/people saw me’\newline
+			versus \fm{x̱at wusiteen} (pfv) ‘s/he/it saw me’
+		\end{itemize}
+	\item	indefinite experiencer subject
+		\begin{itemize}
+		\item	\fm{xóon wuduwanúk} (pfv; obj intr, \fm{∅}, ach) ‘north wind was felt’
+		\end{itemize}
+	\item	expletive/filler subject
+		\begin{itemize}
+		\item	\fm{x̱at kawduwasáy} (pfv; obj intr, \fm{∅}, ach) ‘I got hot/sweaty’
+		\item	\fm{haa kawduwakʼéin} (pfv; obj intr, \fm{g}, mot) ‘we jumped’\newline
+			versus \fm{x̱wajikʼéin} (pfv; subj intr, \fm{g}, mot) ‘I jumped’
+		\end{itemize}
+	\end{enumerate}
+
+\item[dzi]
+	≡ \fm{d-s-i-}
+	combination of \fm{d-} voice prefix,
+		\fm{s-} valency prefix,
+		and \fm{i-} stative prefix
+	\begin{itemize}
+	\item	\fm{wutusi.ée} (pfv; tr, \fm{∅}, \fm{-μμH} act) ‘we made it cooked’ with \fm{s-i-}\newline
+		versus \fm{sh wutudzi.ée} (pfv) ‘we made ourselves cooked’ with \fm{d-s-i-}
+	\end{itemize}
+\end{morphdesc}
+
+\subsection{E}\label{sec:alphalist-e}
+\begin{morphdesc}[resume*=alphalist]
+\item[ee-]
+	allomorph of \fm{i-} second person singular subject
+
+\item[ee=]
+	allomorph of \fm{i-} second person singular object
+\end{morphdesc}
+
+\subsection{G}\label{sec:alphalist-g}
+\begin{morphdesc}[resume*=alphalist]
+\item[g-, ga-]
+	\fm{g} conjugation class prefix, upward spatial orientation;
+	prospective aspect prefix with \fm{w-} irrealis and \fm{g̱-} modal;
+	can occur together with \fm{g-} comparative prefix
+
+\item[g-, ga-]
+	irregular allomorph of \fm{ka-} comparative prefix;
+	identifiable by occurence together with 
+	\begin{itemize}
+	\item	\fm{chʼa yéi googéikʼ} (impfv; obj intr, \fm{n}, \fm{-μμH} state) ‘just a little’\newline
+		versus \fm{yagéi} (impfv) ‘it is big’
+	\end{itemize}
+
+\item[ga-]
+	self-benefactive prefix, occurs with transitive verbs and requires \fm{d-};
+	unclear if a \fm{g-} allomorph is possible;
+	coccurrence with \fm{g-} conjugation prefix and \fm{ga-} comparative prefix uncertain
+
+\item[gági=]
+	directional preverb indicating out into open;
+	derived from noun \fm{gáak} ‘protrusion’ with special locative postposition \fm{-í} \~\ \fm{-i};
+	motion derivation
+			\fm{gági} (\fm{∅}, \fm{-x̱} rep) ‘emerging, out into open’
+	\begin{itemize}
+	\item	\fm{gági uwaháa du waḵshayeexʼ chʼáakʼ ḵuyéik}
+		‘it emerged before his eyes, the eagle spirit’
+		\parencite[01/6]{leer:1973}
+	\end{itemize}
+
+\item[gug̱a]
+	≡ \fm{g-u-g̱a-}
+	combination of \fm{g-} conjugation prefix,
+		\fm{u-} irrealis prefix,
+		and \fm{g̱a-} modality prefix,
+		together indicating prospective (‘future’) aspect;
+	this form occurs when there is no subject prefix and no
+		immediately preceding vowel (incorporated noun, object prefix, preverb, etc.);
+	\fm{kg̱wa} occurs instead if there is a preceding vowel
+	\begin{itemize}
+	\item	\fm{at gug̱ax̱áa} (prosp; tr, \fm{∅}, \fm{-μμH} act) ‘s/he/it will eat something’
+			with \fm{at=g-u-g̱a-}\newline
+		versus \fm{akg̱wax̱áa} (prosp) ‘s/he/it will eat him/her/it’
+			with \fm{a-g-u-g̱a-}
+	\end{itemize}
+\end{morphdesc}
+
+\subsection{G̱}\label{sec:alphalist-gh}
+\begin{morphdesc}[resume*=alphalist]
+\item[g̱-, g̱a-]
+	\fm{g̱} conjugation class prefix, downward spatial orientation;
+	can occur together with \fm{g̱-} modality prefix
+
+\item[g̱-, g̱a-]
+	modality prefix in prospective aspect,
+		hortative mood,
+		potential mood,
+		and contingent mood;
+	can occur together with \fm{g̱-} conjugation class prefix in hortative, potential, contingent;
+	allomorph \fm{x̱-} when in a syllable coda,
+		forms \fm{ḵ} or \fm{ḵa} when combined with \fm{x̱-} / \fm{x̱a-} first person singular subject
+	\begin{enumerate}
+	\item	prospective aspect: \fm{g-} conjugation + \fm{u-} irrealis + \fm{g̱-} modality
+		\begin{itemize}
+		\item	\fm{gug̱atáa} (prosp; \fm{n}, \fm{-μH} act) ‘s/he/it will sleep’
+				with \fm{g-u-g̱a-\rt[¹]{taᴸ}-μμH}\newline
+			versus \fm{wootaa} (pfv) ‘s/he/it slept’
+				with \fm{wu-μ-\rt[¹]{taᴸ}-μμL}
+		\end{itemize}
+	\item	hortative mood: \fm{\xx{cnj}-} conjugation + \fm{g̱-} modality
+	\item	potential mood: \fm{u-} irrealis + \fm{\xx{cnj}-} conjugation + \fm{g̱-} modality
+	\item	contingent mood: \fm{\xx{cnj}-} conjugation + \fm{\xx{g̱}-} modality (+ \xx{-n} + \fm{-ín})
+	\end{enumerate}
+
+\item[g̱unéi=]
+	variant form of \fm{g̱unayéi} ‘starting, beginning’ inceptive preverb, arising from contraction;
+	some speakers use only \fm{g̱unéi} with verbs and reserve \fm{g̱unayéi} as a noun
+
+\item[g̱ax̱=]
+	incorporated noun indicating crying, saturates object argument;
+	derived from \fm{\rt[¹]{g̱ax̱}} ‘cry’
+	\begin{itemize}
+	\item	plural \fm{g̱ax̱satí} (impfv; subj intr?, \fm{g}, \fm{-μH} act) ‘they cry’ (with \fm{s-\rt[¹]{tiᴸ}} ‘be’)\newline
+		versus singular \fm{g̱áax̱} (impfv; subj intr, \fm{g}, \fm{-μμH} act) ‘s/he/it cries’
+	\item	\fm{kei gax̱ gax̱yisatée} (prosp) ‘you pl.\ will cry’
+		\parencite[60.683]{story-naish:1973}
+	\end{itemize}
+
+\item[g̱unayéi=]
+	inceptive preverb indicating initiation of motion or other eventuality;
+	variant form \fm{g̱unéi} arising from contraction;
+	derived from the noun \fm{g̱unayéi} ‘elsewhere, different place’
+		from \fm{g̱una} ‘different, other’
+		and \fm{yé} \~\ \fm{yéi} ‘place, way’
+		probably with \fm{-μ} allomorph of \fm{-xʼ} locative postposition
+	\begin{enumerate}
+	\item	initiation of motion;
+		motion derivation
+			\fm{g̱unayéi} \~\ \fm{g̱unéi} (\fm{∅}, \fm{-x̱} rep) ‘starting off, setting out’
+		\begin{itemize}
+		\item	\fm{g̱unayéi wutuwa.át} (pfv; subj intr, \fm{∅}, \fm{-x̱} rep) ‘we started off’\newline
+			versus \fm{wutuwa.aat} (pfv; subj intr, \fm{n}, \fm{yoo=i-…-k} rep) ‘we went’
+		\end{itemize}
+	\item	initiation of other eventuality;
+		eventuality derivation
+			\fm{g̱unayéi} \~\ \fm{g̱unéi} (\fm{∅}, ach, \fm{-x̱} rep)
+				‘beginning, starting, initiating’
+		\begin{itemize}
+		\item	\fm{g̱unayéi aawax̱áa} (pfv; tr, \fm{∅}, ach) ‘s/he/it started eating him/her/it’\newline
+			versus \fm{aawax̱áa} (pfv; tr, \fm{∅}, \fm{-μH} act) ‘s/he/it ate him/her/it’
+		\end{itemize}
+	\end{enumerate}
+\end{morphdesc}
+
+\subsection{H}\label{sec:alphalist-h}
+\begin{morphdesc}[resume*=alphalist]
+\item[haa=]
+	first person plural object
+	(compare \fm{haa keidlí áwé} ‘it is our dog’);
+	although this is homophonous with the possessive pronoun,
+		\fm{haa=} as an object is not necessarily possessive
+	\begin{itemize}
+	\item	\fm{haa yisiteen} (pfv; tr, \fm{g̱}, ach) ‘you sg.\ saw us’\newline
+		versus \fm{x̱at yisiteen} (pfv) ‘you sg.\ saw me’
+	\end{itemize}
+
+\item[has=]
+	human pluralizer for third person, allomorphs \fm{as=} and \fm{s=};
+	note that since Tlingit is number neutral (nouns are not singular by default),
+		a form without \fm{has=} may still refer to plural humans,
+		i.e.\ \fm{has=} is not required for third person human plural arguments
+	\begin{enumerate}
+	\item	human pluralizer for third person subject
+		\begin{itemize}
+		\item	\fm{tʼá aawax̱áa} (pfv; tr, \fm{∅}, \fm{-μH} act) ‘s/he/it ate king salmon’\newline
+			versus \fm{tʼá has aawax̱áa} (pfv) ‘they (humans) ate king salmon’
+		\end{itemize}
+	\item	human pluralizer for third person object
+		\begin{itemize}
+		\item	\fm{has tushikʼáan} (impfv; tr, \fm{g}, \fm{-μμH} state) ‘we hate them’\newline
+			versus \fm{yee tushikʼáan} (impfv) ‘we hate you guys’
+		\end{itemize}
+	\item	human pluralizer for both third person subject and third person object;
+		some speakers do not accept this use of \fm{has=}
+			for both subject and object at the same time
+		\begin{itemize}
+		\item	\fm{has awsiteen} (pfv; tr, \fm{g}, ach) ‘they saw them’
+			or ‘s/he/it saw them’ or ‘they saw him/her/it’
+		\end{itemize}
+	\end{enumerate}
+\end{morphdesc}
+
+\subsection{I}\label{sec:alphalist-i}
+\begin{morphdesc}[resume*=alphalist]
+\item[i-]
+	second person subject or object; long vowel allomorphs are \fm{ee-} and \fm{ee=};
+	subject versus object is typically distinguished by position in the verb word but can sometimes be ambiguous
+	\begin{enumerate}
+	\item	second person singular subject
+		\begin{itemize}
+		\item	\fm{x̱at iyatéen} (impfv; tr, \fm{g}, \fm{-μμH} state, only impfv) ‘you (sg.)\ can see me’
+		\end{itemize}
+	\item	second person singular оbject
+		\begin{itemize}
+		\item	\fm{ix̱aatéen} (impfv; tr, \fm{g}, \fm{-μμH} state, only impfv) ‘I can see you (sg.)’
+		\end{itemize}
+	\item	ambiguous: second person subject or object depending on context
+		\begin{itemize}
+		\item	\fm{iyatéen} (impfv; tr, \fm{g}, \fm{-μμH} state, only impfv) ‘you (sg.)\ can see him/her/it’ or ‘s/he/it can see you (sg.)’
+		\end{itemize}
+	\end{enumerate}
+
+\item[i-]
+	stative prefix of classifier;
+	allomorphs \fm{ÿa-}, \fm{wa-}, \fm{μ-}
+\end{morphdesc}
+
+\subsection{J}\label{sec:alphalist-j}
+\begin{morphdesc}[resume*=alphalist]
+\item[ji-]
+	incorporated noun indicating hand or possession;
+	qualifier indicating object with extended projections (fingers);
+	derived from relational nouns \fm{jín} ‘hand’ and \fm{jee} ‘possession’
+
+\item[ji-]
+	≡ \fm{d-sh-i-}
+	combination of \fm{d-} voice prefix,
+		\fm{sh-} valency prefix,
+		and \fm{i-} stative prefix
+\end{morphdesc}
+
+\subsection{K}\label{sec:alphalist-k}
+\begin{morphdesc}[resume*=alphalist]
+\item[k-, ka-]
+	incorporated noun indicating horizontal surface,
+	derived from relational noun \fm{ká} ‘horizontal surface, flat top of’;
+	can occur together with \fm{ka-} small round
+		or \fm{ka-} comparative
+		or \fm{ka-} unknown	
+
+\item[k-, ka-]
+	qualifier indicating small round object;
+	can occur together with \fm{ka-} horizontal surface
+		or \fm{ka-} comparative
+		or \fm{ka-} unknown
+
+\item[k-, ka-]
+	qualifier of unknown meaning;
+	can occur together with \fm{ka-} small round qualifier 
+		or \fm{ka-} horizontal surface
+		or \fm{ka-} comparative
+
+\item[k-, ka-]
+	comparative prefix, used along with irrealis \fm{u-} \~\ \fm{oo-} \~\ \fm{w-},
+	required in comparative forms of state verbs denoting dimensions
+	\begin{itemize}
+	\item	\fm{ḵúdáx̱ koodáal} (impfv; obj intr, \fm{n}, \fm{-μμH} cmpv state) ‘it is too heavy’\newline
+		versus \fm{yadál} (impfv; obj intr, \fm{n}, \fm{-μH} state) ‘it is heavy’
+	\end{itemize}
+
+\item[kḵwa]
+	≡ \fm{g-u-g̱-x̱a-}
+	combination of \fm{g-} conjugation prefix,
+		\fm{u-} irrealis prefix,
+		and \fm{g̱a-} modality prefix,
+			together indicating prospective (‘future’) aspect
+		with first person singular subject \fm{x̱-} / \fm{x̱a-};
+	this form occurs when there is an
+		immediately preceding vowel (incorporated noun, object prefix, preverb, etc.);
+	\begin{itemize}
+	\item	\fm{yee kḵwax̱áa} (prosp) ‘I will eat you (pl.)’
+			with \fm{ÿee=g-u-g̱-x̱a-}\newline
+		versus \fm{at kuḵax̱áa} (prosp; \fm{∅}, \fm{-μμH} act) ‘I will eat something’
+			with \fm{at=g-u-g̱-x̱a-}
+	\end{itemize}
+
+\item[kuḵa]
+	≡ \fm{g-u-g̱-x̱a-}
+	combination of \fm{g-} conjugation prefix,
+		\fm{u-} irrealis prefix,
+		and \fm{g̱a-} modality prefix,
+			together indicating prospective (‘future’) aspect
+		with first person singular subject \fm{x̱-} / \fm{x̱a-};
+	this form occurs when there is no
+		immediately preceding vowel (incorporated noun, object prefix, preverb, etc.);
+	\fm{kḵwa} occurs instead if there is a preceding vowel
+	\begin{itemize}
+	\item	\fm{at kuḵax̱áa} (prosp; \fm{∅}, \fm{-μμH} act) ‘I will eat something’
+			with \fm{at=g-u-g̱-x̱a-}\newline
+		versus \fm{yee kḵwax̱áa} (prosp) ‘I will eat you (pl.)’
+			with \fm{ÿee=g-u-g̱-x̱a-}
+	\end{itemize}
+
+\item[kuḵwa]
+	variant of \fm{kuḵa}
+	
+\item[kwḵa]
+	variant of \fm{kḵwa} used primarily in \cite{story-naish:1973}
+\end{morphdesc}
+
+\subsection{Ḵ}\label{sec:alphalist-kh}
+\begin{morphdesc}[resume*=alphalist]
+\item[ḵ, ḵa]
+	≡ \fm{g̱-x̱-}
+	combination of first person singular subject \fm{x̱-} / \fm{x̱a-} with either one of
+		\fm{g̱-} conjugation class prefix
+		or \fm{g̱-} modality prefix
+	\begin{enumerate}
+	\item	with \fm{g̱-} conjugation class prefix: \fm{g̱-x̱a-} → \fm{ḵa}
+	\item	with \fm{g̱-} modality prefix: \fm{g̱-x̱a-} → \fm{ḵa}
+	\end{enumerate}
+	
+\item[ḵaa=]
+	allomorph of \fm{ḵu-} indefinite human object ‘someone, people, one, them’;
+	possibly like \fm{ax̱=} used only as possessor of incorporated noun
+		(compare \fm{ḵaa keidlí áwé} ‘it’s someone’s dog’)
+	\begin{itemize}
+	\item	\fm{ḵaa seiwa.áx̱} (pfv; tr, \fm{∅}, ach) ‘s/he/it heard someone’s voice’
+	\end{itemize}
+
+\item[ḵu-]
+	\begin{enumerate}
+	\item	areal prefix indicating space, area, extent, or weather;
+		(compare \fm{ḵúx̱(-de)=} ‘back, returning’, \fm{ḵut=} ‘lost’)
+		\begin{itemize}
+		\item	\fm{ḵuwakʼéi} (impfv; impers, \fm{g}, \fm{-μμH} state) ‘it is good weather’\newline
+			versus \fm{yakʼéi} (impfv; obj intr) ‘it is good’
+		\end{itemize}
+	\item	indefinite human object ‘someone, people, one, them’
+		(compare PP pronoun \fm{ḵú-} ‘someone, people, one, them’);
+		also allomorph \fm{ḵaa=} possessor of incorporated noun
+		\begin{itemize}
+		\item	\fm{ḵuwsiteen} (pfv; tr, \fm{g̱}, ach) ‘s/he/it saw someone/people’
+		\end{itemize}
+	\end{enumerate}
+\end{morphdesc}
+
+\subsection{L}\label{sec:alphalist-l}
+\begin{morphdesc}[resume*=alphalist]
+\item[l-, la-]
+	valency prefix of classifier
+	\begin{enumerate}
+	\item	argument addition
+		\begin{enumerate}
+		\item	lone argument of intransitive
+		\item	causative
+		\item	applicative
+		\end{enumerate}
+	\item	spatial extension
+		\begin{enumerate}
+		\item	extended entity
+		\item	extended eventuality
+		\end{enumerate}
+	\end{enumerate}
+
+\item[lˢ-, lˢa-]
+	allomorph of \fm{s-} \~\ \fm{sa-} valency prefix of classifier;
+	occurs when any fricative
+		/\ipa{s}, \ipa{sʼ}, \ipa{ɬ}, \ipa{ɬʼ}, \ipa{ʃ}/
+	or any affricate
+		/\ipa{ts}, \ipa{tsʰ}, \ipa{tsʼ},
+		\ipa{tɬ}, \ipa{tɬʰ}, \ipa{tɬʼ},
+		\ipa{tʃ}, \ipa{tʃʰ}, \ipa{tʃʼ}/
+	occurs in the onset or coda of the stem syllable;
+	phonetically indistinguishable from \fm{l-} \~\ \fm{la-} and may be represented as such
+	if the distinction is not important
+	\begin{itemize}
+	\item	\fm{lichán} (impfv; obj intr, \fm{g}, \fm{-μH} invar.\ state) ‘it stinks’
+		(not *\fm{sichán})
+	\item	\fm{wutuliyíḵsʼ} (rep pfv; tr, \fm{n}, mot) ‘we repeatedly pulled it (long obj.)’\newline
+		versus \fm{wutusiyeeḵ} (pfv) ‘we pulled it (long obj.)’
+	\end{itemize}
+
+\item[…l]
+	≡ \fm{d-l-}
+	combination of \fm{d-} voice prefix
+		and \fm{l-} or \fm{lˢ-} valency prefix,
+	appears only as a coda consonant and so requires a preceding vowel
+	\begin{itemize}
+	\item	\fm{sh ilg̱ásʼx̱} (rep impfv; tr, \fm{∅}, ach) ‘s/he/it repeatedly scratches self’
+			with \fm{d-l-}\newline
+		versus \fm{sh wudlig̱ásʼ} (pfv) ‘s/he/it scratched self’
+			with \fm{d-l-i-}
+	\item	\fm{tléil sh kawulháachʼ} (neg pfv; tr, \fm{n}, \fm{-μμH} state) ‘s/he/it didn’t shame self’
+			with \fm{d-l-}
+		versus \fm{sh kawdliháachʼ} (pfv) ‘s/he/it shamed self’
+			with \fm{d-l-i-}
+	\end{itemize}
+
+\item[le-, la-]
+	incorporated noun indicating throat or inside of mouth
+
+\item[li]
+	≡ \fm{l-i-}
+	combination of \fm{l-} or \fm{lˢ-} valency prefix
+		and \fm{i-} stative prefix
+\end{morphdesc}
+
+\subsection{M}\label{sec:alphalist-m}
+\begin{morphdesc}[resume*=alphalist]
+\item[m-]
+	allomorph of \fm{wu-} perfective prefix in coda of a syllable;
+	currently used only in Inland Tlingit varieties in place of \fm{w-} elsewhere,
+	but may also occur elsewhere in older Tlingit (e.g.\ song lyrics)
+	\begin{itemize}
+	\item	\fm{amsiteen} (pfv; tr, \fm{g̱}, ach) ‘s/he/it caught sight of (saw) him/her/it’\newline
+		(instead of \fm{awsiteen})\newline
+		versus \fm{x̱at wusiteen} (pfv) ‘s/he/it caught sight of (saw) me’
+	\end{itemize}
+\end{morphdesc}
+
+\subsection{N}\label{sec:alphalist-n}
+\begin{morphdesc}[resume*=alphalist]
+\item[n-, na-]
+	\begin{enumerate}
+	\item	\fm{n} conjugation class prefix, horizontal spatial orientation
+		\begin{itemize}
+		\item	\fm{nayx̱éixʼw!} (imp; subj intr, \fm{n}, \fm{-μμH} act) ‘you guys (go to) sleep!’
+		\item	\fm{naḵahoon} (hort; tr, \fm{n}, \fm{-μμH} act) ‘let me sell it’
+		\end{itemize}
+	\item	progressive aspect prefix
+		\begin{itemize}
+		\item	\fm{yaa nx̱ax̱éin} (prog; tr, \fm{∅}, act) ‘I am going along eating it’\newline
+			versus \fm{x̱ax̱á} (impfv) ‘I am eating it’
+		\end{itemize}
+	\end{enumerate}
+
+\item[-n]
+	stem suffix of uncertain meaning;
+	causes ablaut /\ipa{a}, \ipa{u}/ → [\ipa{eː}] of \fm{\rt{Ca}} and \fm{\rt{Cu}} roots
+	except for \fm{\rt[¹]{naᴸ}} ‘die’ and \fm{\rt[²]{ya}} ‘pack’
+	\begin{enumerate}
+	\item	with progressive aspect
+		\begin{itemize}
+		\item	\fm{yaa anax̱éin} (prog; tr, \fm{∅}, \fm{-μH} act) ‘s/he/it is going along eating him/her/it’ with root \fm{\rt[²]{x̱a}} ‘eat’\newline
+			(not \fm[*]{yaa anax̱áan})\newline
+			versus \fm{aawax̱áa} (pfv) ‘s/he/it ate him/her/it’
+		\item	\fm{yaa anaskwéin} (prog; subj intr, \fm{∅}, ach) ‘s/he/it is coming to know him/her/it’ with root \fm{\rt[²]{kuᴸ}} ‘know’\newline
+			(not \fm[*]{yaa anaskóon})\newline
+			versus \fm{awsikóo} (pfv) ‘s/he/it came to know him/her/it’
+		\end{itemize}
+	\item	with conditional mood
+	\item	with contingent mood
+	\item	irregularly in a few imperfective state verbs
+	\end{enumerate}
+\end{morphdesc}
+
+\subsection{O}\label{sec:alphalist-o}
+\begin{morphdesc}[resume*=alphalist]
+\item[oo-]
+	allomorph of \fm{u-} irrealis prefix
+\end{morphdesc}
+
+\subsection{S}\label{sec:alphalist-s}
+\begin{morphdesc}[resume*=alphalist]
+\item[s-, sa-]
+	valency prefix of classifier
+	\begin{enumerate}
+	\item	argument addition
+		\begin{enumerate}
+		\item	lone argument of intransitive
+		\item	causative
+		\item	applicative
+		\end{enumerate}
+	\item	spatial extension
+		\begin{enumerate}
+		\item	extended entity
+		\item	extended eventuality
+		\end{enumerate}
+	\end{enumerate}
+
+\item[…s]
+	≡ \fm{d-s-}
+	combination of \fm{d-} voice prefix
+		and \fm{s-} valency prefix,
+	appears only as a coda consonant and so requires a preceding vowel
+	\begin{itemize}
+	\item	\fm{yax̱ sh x̱asnei} (rep impfv; tr, \fm{∅}, ach) ‘I repeatedly dress myself’
+			with \fm{d-s-}\newline
+		versus \fm{yan sh x̱wadzinéi} (pfv) ‘I dressed myself’
+			with \fm{d-s-i-}
+	\end{itemize}
+
+\item[s=]
+	allomorph of \fm{has=} human pluralizer for third person subject or object
+
+\item[se-, sa-]
+	incorporated noun indicating voice or vocalization
+
+\item[sh=]
+	reflexive object;
+	requires middle voice \fm{d-}
+
+\item[sh-, sha-]
+	valency prefix of classifier
+	\begin{enumerate}
+	\item	pejorative
+		\begin{enumerate}
+		\item	pejorative entity
+		\item	pejorative eventuality
+		\end{enumerate}
+	\item	negative
+	\item	unclear meaning
+	\end{enumerate}
+
+\item[…sh]
+	≡ \fm{d-sh-}
+	combination of \fm{d-} voice prefix
+		and \fm{sh-} valency prefix,
+	appears only as a coda consonant and so requires a preceding vowel
+	\begin{itemize}
+	\item	\fm{yaa sh kanx̱ashxʼáḵw} (prog; tr, \fm{n}, ach) ‘I am making myself comfortable’
+			with \fm{d-sh-}\newline
+		versus \fm{sh kax̱wjixʼaaḵw} (pfv) ‘I made myself comfortable’
+			with \fm{d-sh-i-}
+	\end{itemize}
+
+\item[sha-]
+	incorporated noun indicating head or hair of the head;
+	derived from relational noun \fm{shá} ‘head’
+
+\item[shakux=]
+	incorporated noun indicating thirst,
+	saturates object argument;
+	derived from \fm{shá} ‘head’ and \fm{\rt[¹]{kux}} ‘dry’
+		in verb \fm{x̱at shaawakúx} (pfv; obj intr, \fm{∅}, ach) ‘I got thirsty’
+		suggesting a nominalization \fm{shakoox} ‘thirsting’
+	\begin{itemize}
+	\item	\fm{ax̱ éet shakux uwaháa} (pfv; obj intr, \fm{∅}, mot) ‘thirst appeared to me’,
+		i.e.\ ‘I got thirsty’
+		\parencite[01/11]{leer:1973}
+	\end{itemize}
+
+\item[shi]
+	≡ \fm{sh-i-}
+	combination of \fm{sh-} valency prefix
+		and \fm{i-} stative prefix
+
+\item[si]
+	≡ \fm{s-i-}
+	combination of \fm{s-} valency prefix
+		and \fm{i-} stative prefix
+\end{morphdesc}
+
+\subsection{T}\label{sec:alphalist-t}
+\begin{morphdesc}[resume*=alphalist]
+\item[tu-]
+	first person plural subject;
+	note that \cite{story-naish:1973} write all cases of \fm{tu-} as \fm{too-}
+		so they do not distinguish the two allomorphs
+	\begin{itemize}
+	\item	\fm{wutuwax̱áa} (pfv; tr, \fm{∅}, \fm{-μH} act) ‘we ate it’\newline
+		versus \fm{toox̱á} (impfv) ‘we eat it; we are eating it’
+	\end{itemize}
+
+\item[tu-]
+	incorporated noun indicating mind, emotion, or bodily spirit;
+	derived from relational noun \fm{tú} ‘inside of (hollow object)’
+	used metaphorically as ‘mind, emotion, bodily spirit’ as in \fm{ax̱ toowú yanéekw} ‘my mind hurts’
+
+\item[too-]
+	allomorph of \fm{tu-} first person plural subject
+	\begin{itemize}
+	\item	\fm{toox̱á} (pfv; tr, \fm{∅}, \fm{-μH} act) ‘we eat it; we are eating it’\newline
+		versus \fm{wutuwax̱áa} (pfv) ‘we ate it’
+	\end{itemize}
+\end{morphdesc}
+
+\subsection{U}\label{sec:alphalist-u}
+\begin{morphdesc}[resume*=alphalist]
+\item[u-]
+	irrealis prefix
+
+\item[u-]
+	\fm{∅} conjugation class perfective,
+	occurring in some perfective aspect forms and some habitual aspect forms of
+	\fm{∅} conjugation class verbs
+\end{morphdesc}
+
+\subsection{W}\label{sec:alphalist-w}
+\begin{morphdesc}[resume*=alphalist]
+\item[w-]
+	allomorph of \fm{wu-} perfective prefix in coda of a syllable;
+	in Inland Tlingit \fm{m-} is used instead, may also occur elsewhere in older Tlingit
+		(e.g.\ song lyrics);
+	19th century Tlingit occasionally has full \fm{wu-} rather than \fm{w-},
+		e.g.\ \fm{awusikóo du éesh hídi} ‘she knew her father’s house’
+		\parencite[255.7]{swanton:1909}
+	\begin{itemize}
+	\item	\fm{awsiteen} (pfv; tr, \fm{g̱}, ach) ‘s/he/it caught sight of (saw) him/her/it’\newline
+		versus \fm{x̱at wusiteen} (pfv) ‘s/he/it caught sight of (saw) me’
+	\end{itemize}
+
+\item[w-]
+	allomorph of \fm{u-} irrealis prefix
+
+\item[wa-]
+	allomorph of \fm{ÿa-} stative prefix when preceded by labialized (round) sound
+
+\item[wu-]
+	perfective prefix;
+	allomorphs include \fm{m-}, \fm{w-}, \fm{μw-},
+	combinations include \fm{ÿi}, \fm{ÿee}, \fm{ÿeeÿ};
+	see also \fm{∅} conjugation class perfective \fm{u-}
+
+\item[wush=]
+	variant form of \fm{woosh=} reciprocal proclitic
+
+\item[wooch=]
+	variant form of \fm{woosh=} reciprocal proclitic
+
+\item[woosh=]
+	reciprocal proclitic
+\end{morphdesc}
+
+\subsection{X̱}\label{sec:alphalist-xh}
+\begin{morphdesc}[resume*=alphalist]
+\item[x̱-, x̱a-]
+	first person singular subject
+	\begin{itemize}
+	\item	\fm{laaḵʼásk kax̱satʼaak} (impfv; tr, \fm{∅}, \fm{-μμL} act) ‘I am pressing black seaweed’\newline
+		versus \fm{laaḵʼásk x̱ax̱á} (impfv; tr, \fm{∅}, \fm{-μH} act) ‘I am eating black seaweed’
+	\end{itemize}
+
+\item[x̱-]
+	allomorph of \fm{g̱-} conjugation prefix when in a syllable coda
+	\begin{itemize}
+	\item	\fm{kax̱lax̱óotʼ} (imp; tr, \fm{g̱}, \fm{-μμH} act) ‘(you sg.)\ chop/adze it!’ in syllable \fm{kax̱}\newline
+		(not \fm[*]{kag̱alax̱óotʼ} or \fm[*]{kaḵlax̱óotʼ})\newline
+		versus \fm{kag̱aylax̱óotʼ} ‘you pl.\ chop/adze it!’ in syllable \fm{g̱ay}
+	\end{itemize}
+
+\item[x̱-]
+	allomorph of \fm{g̱-} modality prefix when in a syllable coda
+	\begin{itemize}
+	\item	\fm{at gax̱toox̱áa} (prosp; tr, \fm{∅}, \fm{-μH} act) ‘we will eat something’ with \fm{x̱-}\newline
+		(not \fm[*]{at gag̱atoox̱áa} or \fm[*]{at gaḵtoox̱áa})\newline
+		versus \fm{at gug̱ax̱áa} (prosp) ‘s/he/it will eat something’ with \fm{g̱a-}
+	\end{itemize}
+
+\item[x̱at=]
+	first person singular object;
+	allomorph \fm{ax̱=} ‘my’ with incorporated nouns
+	\begin{itemize}
+	\item	\fm{x̱at yisiteen} (pfv; tr, \fm{g̱}, ach) ‘you sg.\ saw me’\newline
+		versus \fm{ix̱wsiteen} (pfv) ‘I saw you ’
+	\end{itemize}
+\end{morphdesc}
+
+\subsection{Y}\label{sec:alphalist-y}
+\begin{morphdesc}[resume*=alphalist]
+\item[ÿ-]
+	allomorph of \fm{i-} second person singular subject prefix
+	
+\item[ÿa-, ÿ-]
+	qualifier or incorporated noun indicating vertical surface or face,
+	derived from relational noun \fm{ÿá} ‘face’;
+	can occur together with \fm{ÿa-} unknown
+
+\item[ÿa-, ÿ-]
+	qualifier of unknown meaning;
+	can occur together with \fm{ÿa-} face qualifier
+
+\item[ÿa-]
+	allomorph of \fm{i-} stative prefix
+	\begin{itemize}
+	\item	\fm{yadál} (impfv; obj intr, \fm{g}, \fm{-μH} state) ‘it is heavy’
+			with \fm{ÿa-\rt[¹]{dal}-μH}\newline
+		versus \fm{si.áatʼ} (impfv; obj intr, \fm{g}, \fm{-μμH} state) ‘it is cold’
+			with \fm{s-i-\rt[⁰]{.atʼ}-μμH}
+	\end{itemize}
+
+\item[ÿaa=]
+	directional preverb indicating progression or movement along a space
+	(compare \fm{\rt[²]{ÿa}} ‘move’,
+		directional noun \fm{diÿáa} ‘across, other side’,
+		\fm{niÿaa} ‘direction’);
+	\begin{enumerate}
+	\item	progression, used in progressive aspect for \fm{∅} and \fm{n} conjugation class verbs
+		\begin{itemize}
+		\item	\fm{yaa x̱at nalnítl} (prog; obj intr, \fm{∅}, ach) ‘I am getting fat’\newline
+			versus \fm{x̱at wudlinítl} (pfv) ‘I got fat’
+		\end{itemize}
+	\item	movement along a space
+		\begin{enumerate}
+		\item	motion derivation
+				\fm{ÿaa} (\fm{g̱}, \fm{yei=…-ch} rep) ‘down along’
+				(\fm{yei} in repetitive blocks \fm{ÿaa})
+		\item	motion derivation
+				\fm{ÿaa} \~\ \fm{ÿa-u-} (\fm{∅}, \fm{-ch} rep) ‘obliquely, circuitously’
+		\end{enumerate}
+	\end{enumerate}
+
+\item[ÿaa=]
+	preverb indicating mental phenomenon, limited to a couple of verbs;
+	uncertain if it can occur together with \fm{ÿaa} ‘along’;
+	possibly related to Proto-Dene \fm[*]{yən-} \~\ \fm[*]{yiːn-} ‘mind’ and Eyak \fm{ʔiːlih} ‘mind’
+	\begin{itemize}
+	\item	\fm{yaa ḵux̱dzigéi} (impfv; subj intr, \fm{g}, \fm{-μμH} state) ‘I am smart, wise’
+	\item	\fm{yaa aḵoowlig̱át} (pfv; tr, \fm{∅}, ach) ‘s/he/it forgot him/her/it’
+	\end{itemize}
+
+\item[ÿaan=]
+	incorporated noun indicating hunger,
+	saturates object argument;
+	derived from noun \fm{ÿaan} ‘hunger’ (now rare)
+	\begin{itemize}
+	\item	\fm{ax̱ éet yaan uwaháa} (pfv; obj intr, \fm{∅}, mot) ‘hunger appeared to me’ (i.e.\ ‘I got hungry’)\newline
+		(not \fm[*]{yaan ax̱ éet uwaháa})
+	\end{itemize}
+
+\item[ÿan=]
+	directional preverb indicating motion to shore, motion to ground, or termination;
+	allomorphs are \fm{ÿax̱} and \fm{ÿánde}:
+		\fm{ÿax̱} is used with repetitive,
+		\fm{ÿánde} with progressive and prospective,
+		and \fm{ÿan} elsewhere (e.g.\ pfv, imp);
+	morphologically a specialization of the
+		\fm{NP-\{t,x̱,dé\}} (\fm{∅}, \fm{-μμL} rep) ‘arriving at NP’
+		motion derivation,
+	so the \fm{ÿan} probably used to end with \fm{-t} ‘to a point’ punctual postposition
+		as \fm[*]{ÿant};
+	derived from noun \fm{ÿán} ‘shore’
+		(< Pre-Tlingit \fm[*]{ŋanʰ} < Proto-Na-Dene \fm[*]{ŋənˀ} ‘ground, earth’)
+	\begin{enumerate}
+	\item	motion on water to shore,
+		can be translated ‘ashore’;
+		motion derivation
+			\fm{ÿan} / \fm{yax̱} / \fm{ÿánde} (\fm{∅}, \fm{-μμL} rep) ‘ashore’
+	\item	motion to ground or other horizontal surface,
+		can be translated ‘down’ or ‘on ground’;
+		motion derivation
+			\fm{ÿan} / \fm{yax̱} / \fm{ÿánde} (\fm{∅}, \fm{-μμL} rep) ‘on ground’
+			optionally with incorporates (\fm{kʼi-} ‘base’ for ‘setting up, erecting’,
+			\fm{sha-} ‘head’ for ‘leaning against’)
+	\item	termination of eventuality,
+		can be translated ‘ending, terminating, finishing’;
+		eventuality/motion derivation
+			\fm{ÿan} \~\ \fm{yax̱} \~\ \fm{ÿánde} (\fm{∅}, \fm{-μμL} rep) ‘ending, finishing’
+			optionally with \fm{NP-xʼ} ‘coming to rest at NP’;
+		derives from metaphor of ‘shore’ as ‘end of journey’ and thus ‘end of event’
+	\end{enumerate}
+
+\item[ÿánde=]
+	allomorph of \fm{ÿan} directional preverb ‘ashore’ or ‘ending’
+	with \fm{-dé} \~\ \fm{-de} ‘toward’ allative postposition
+	\begin{itemize}
+	\item	\fm{yánde gax̱tooḵóox̱} (prosp; subj intr, \fm{∅}, mot) ‘we are going to boat ashore’\newline
+		versus \fm{yan wutuwaḵúx̱} (pfv) ‘we boated ashore’
+	\end{itemize}
+
+\item[ÿata=]
+	incorporated noun indicating sleep,
+	saturates object argument;
+	apparently derived from \fm{ÿá} ‘face’ and \fm{\rt[¹]{taᴸ}} ‘sg.\ sleep’
+	\begin{itemize}
+	\item	\fm{ax̱ éet yataawaháa} (pfv; obj intr, \fm{∅}, mot) ‘sleep appeared to me’, i.e. ‘I got sleepy’
+	\item	\fm{ax̱ yaadáx̱ yataawahaa} (pfv; obj intr, \fm{g̱}, mot) ‘sleep disappeared from my face’,
+		i.e.\ ‘I became wakeful’
+	\end{itemize}
+
+\item[ÿax̱=]
+	allomorph of \fm{ÿan} directional preverb ‘ashore’ or ‘ending’
+	with \fm{-x̱} ‘contacting’ perlative postposition;
+	used only with repetitive versus \fm{ÿánde} (prog, prosp) or \fm{ÿan} (pfv, imp, etc.)
+	\begin{itemize}
+	\item	\fm{yax̱ tooḵoox̱} (rep impfv; subj intr, \fm{∅}, mot) ‘we repeatedly boat ashore’\newline
+		versus \fm{yan wutuwaḵúx̱} (pfv) ‘we boated ashore’
+	\end{itemize}
+
+\item[ÿee-]
+	allomorph of second person singular subject \fm{ÿi-}
+
+\item[ÿee=]
+	allomorph of second person singular object \fm{ÿi-}
+
+\item[ÿee=]
+	incorporated noun indicating time
+
+\item[ÿee]
+	≡ \fm{wu-i-μ}
+	combination of \fm{wu-} perfective prefix and
+		\fm{i-} second person singular prefix and
+		\fm{μ-} stative prefix
+
+\item[ÿeeÿ]
+	second person plural subject \fm{ÿi-} combined with either one or both of
+		\fm{wu-} perfective
+		and \fm{ÿa-} \~\ \fm{i-} stative
+	\begin{enumerate}
+	\item	\fm{ÿeeÿ} ≡ \fm{ÿi-ÿa-}
+		with \fm{ÿa-} stative
+	\item	\fm{ÿeeÿ} ≡ \fm{wu-ÿi-}
+		with \fm{wu-} perfective
+	\item	\fm{ÿeeÿ} ≡ \fm{wu-ÿi-ÿa-}
+		with \fm{wu-} perfective and \fm{ÿa-} stative
+	\item	\fm{ÿeeÿsi} ≡ \fm{ÿi-s-i-}
+		with \fm{i-} stative and \fm{s-} (or \fm{l-} or \fm{sh-}) valency
+	\item	\fm{ÿeeÿsi} ≡ \fm{wu-ÿi-s-i-}
+		with \fm{wu-} perfective and \fm{i-} stative and \fm{s-} (or \fm{l-} or \fm{sh-}) valency
+	\end{enumerate}
+
+\item[yei=]
+	direction preverb ‘down’;
+	may reflect \fm{g̱} conjugation class or a \fm{∅} conjugation class motion derivation;
+	part of directional element paradigm of \fm{\rt{ÿiⁿ}} ‘down’:
+		\fm{(di)ÿée} ‘below’, \fm{(di)ÿín-de} ‘to below’, \fm{(di)ÿee-naa} ‘downward’;
+	related to \fm{ÿee} ‘beneath, below’
+	\begin{enumerate}
+	\item	reflects \fm{g̱} conjugation class in prospective, progressive, and repetitive imperfective
+	\item	\fm{g̱} conjugation class motion derivation
+	\item	\fm{∅} conjugation class motion derivation
+	\end{enumerate}
+
+\item[yéi=]
+	manner preverb ‘thus, so’;
+	derived from noun \fm{yéi} \~\ \fm{yé} ‘place, way, manner’
+
+\item[ÿi-]
+	second person plural subject or object; long vowel allomorphs are \fm{ÿee-} and \fm{ÿee=}
+	\begin{enumerate}
+	\item	second person plural subject
+	\item	second person plural object
+	\end{enumerate}
+
+\item[ÿi]
+	≡ \fm{wu-i-}
+	combination of perfective \fm{wu-} and
+		second person singular subject \fm{i-}
+
+\item[ÿu-]
+	abstract representation of perfective \fm{wu-};
+	this form does not actually occur in speech, instead see
+		\fm{wu-}, \fm{w-}, \fm{m-}, \fm{μw-} \fm{ÿi}, \fm{ÿee}, \fm{ÿeeÿ}
+
+\item[yoo=]
+	alternating eventuality preverb
+
+\item[yóo=]
+	quotative preverb
+
+\end{morphdesc}
+
+\subsection{Symbols}\label{sec:alphalist-sym}
+\begin{morphdesc}[resume*=alphalist]
+\item[μ-]
+	allomorph of stative \fm{ya-} \~\ \fm{i-}
+	\begin{itemize}
+	\item	\fm{x̱at yatéen} (impfv; tr, \fm{∅}, \fm{-μμH} state) ‘s/he/it can see me’
+			with \fm{ÿa-}\newline
+		versus \fm{x̱aatéen} (impfv) ‘I can see him/her/it’
+			with \fm{μ-}\newline
+		(not normally \fm[*]{x̱ayatéen}, although some speakers also permit this form)
+	\end{itemize}
+
+\item[μw-]
+	allomorph of perfective \fm{wu-} when preceded by CV and followed by \fm{ÿa-} stative
+	\begin{itemize}
+	\item	\fm{aawajáḵ} (pfv; \fm{∅}, ach) ‘s/he/it killed him/her/it’
+			with \fm{a-μw-wa-\rt[¹]{jaḵ}-μH}\newline
+		versus \fm{wutuwajáḵ} (pfv) ‘we killed him/her/it’
+			with \fm{wu-tu-wa-\rt[¹]{jaḵ}-μH}
+	\end{itemize}
+
+\item[-μL]
+	stem variation: short vowel with low tone [\ipa{V̀}]
+	\begin{itemize}
+	\item	\fm{neil uwagudi ḵáa} (pfv rel; subj intr, \fm{∅}, mot) ‘man who went home’
+		with \fm{\rt[¹]{gut}} ‘sg.\ go’ and \fm{-μL}
+		in \fm{∅} conjugation class perfective aspect relative clause
+	\end{itemize}
+
+\item[-μH]
+	stem variation: short vowel with high tone [\ipa{V́}]
+	\begin{itemize}
+	\item	\fm{neil uwagút} (pfv; subj intr, \fm{∅}, mot) ‘s/he/it went home’
+		with \fm{\rt[¹]{gut}} ‘sg.\ go’ and \fm{-μH}
+		in \fm{∅} conjugation class perfective aspect main clause
+	\end{itemize}
+
+\item[-μμL]
+	stem variation: long vowel with low tone [\ipa{V̀ː}]
+	\begin{itemize}
+	\item	\fm{neildé woogoot} (pfv; subj intr, \fm{n}, mot) ‘s/he/it went homeward’
+		with \fm{\rt[¹]{gut}} ‘sg.\ go’ and \fm{-μμL}
+		in \fm{n} conjugation class perfective aspect main clause
+	\end{itemize}
+
+\item[-μμH]
+	stem variation: long vowel with high tone [\ipa{V́ː}]
+	\begin{itemize}
+	\item	\fm{neildé gug̱agóot} (prosp; subj intr, \fm{∅}/\fm{n}, mot) ‘s/he/it will go home’
+		with \fm{\rt[¹]{gut}} ‘sg.\ go’ and \fm{-μμH}
+		in prospective aspect main clause
+	\end{itemize}
+
+\item[-μₑμL]
+	stem variation: ablaut (/\ipa{a, u}/ > [\ipa{e}]) long vowel with low tone [\ipa{èː}];
+	normally occurs only with \fm{\rt{CVᴸ}} (Tongass \fm{\rt{CVʰ}}) roots
+	\begin{itemize}
+	\item	\fm{x̱ateix̱} (rep impfv; subj intr, \fm{n}, \fm{-μH} act) ‘I repeatedly sleep’
+			with \fm{\rt[¹]{taᴸ}} ‘sg.\ sleep’ and \fm{-μₑμL-x̱}\newline
+		versus
+		\fm{x̱atá} (impfv) ‘I am sleeping’
+			with \fm{-μH}\newline
+		but \fm{yaa nx̱atéin} (prog) ‘I am falling asleep’
+			with \fm{-μₑμH-n}
+	\end{itemize}
+
+\item[-μₑμH]
+	stem variation: ablaut (/\ipa{a, u}/ > [\ipa{e}]) long vowel with high tone [\ipa{éː}];
+	normally occurs only with \fm{\rt{CV}} roots
+	\begin{itemize}
+	\item	\fm{x̱ax̱éix̱} (rep impfv; tr, \fm{∅}, \fm{-μH} act) ‘I repeatedly eat it’
+			with \fm{\rt[²]{x̱a}} ‘eat’ and \fm*{-μₑμH-x̱}\newline
+		versus
+		\fm{x̱ax̱á} (impfv) ‘I am eating it’
+			with \fm{-μH}
+	\end{itemize}
+
+\item[-⊗]
+	stem variation: irregular deletion of final consonant and short vowel with high tone;
+	only occurs in imperatives with \fm{\rt[¹]{gut}} ‘sg go’,
+			\fm{\rt[¹]{.at}} ‘pl go’,
+			\fm{\rt[¹]{nuk}} ‘sg sit’
+	\begin{itemize}
+	\item	\fm{neildé nagú!} (imp; subj intr, \fm{n}, mot) ‘(you sg.)\ go homeward!’
+			\morphemes{\fm{neil-dé na-\rt[¹]{gut}-⊗}}
+		\versus{\fm{neildé yeegoot} (pfv) ‘you sg.\ went homeward’}
+			\morphemes{\fm{neil-dé ÿ-i-μ-\rt[¹]{gut}-μμL}}
+	\item	\fm{neildé nay.á!} (imp; subj intr, \fm{n}, mot) ‘you guys go homeward!’
+			\morphemes{\fm{neil-dé na-ÿ-\rt[¹]{.a}-⊗}}
+		\versus{	\fm{neildé yeey.aat} (pfv) ‘you guys went homeward’}
+			\morphemes{\fm{neil-dé ÿμ-iÿ-ÿa-\rt[¹]{.at}-μμL}}
+	\item	\fm{g̱anú!} (imp; subj intr, \fm{g̱}, mot) ‘(you sg.)\ sit down!’
+			\morphemes{\fm{g̱a-\rt[¹]{nuk}-⊗}}
+		\versus{	\fm{yeenook} (pfv) ‘you (sg.)\ sat down’}
+			\morphemes{\fm{ÿ-i-μ-\rt[¹]{nuk}-μμL}}
+	\end{itemize}
+\end{morphdesc}
+
+\clearpage
+\section{Inventory of verb morphemes by position and function}\label{sec:inventory}
+
+
+\clearpage
+\raggedyright
+\printbibliography\label{sec:bibliography} 
+
+\end{document}

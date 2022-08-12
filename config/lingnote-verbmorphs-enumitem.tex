@@ -1,0 +1,66 @@
+%!TEX root = ../lingnote-verbmorphs.tex
+%%
+%% Fancy list environments with enumitem.
+%%
+
+\usepackage{enumitem}
+
+%% No leading between items.
+\setenumerate{noitemsep}
+\setitemize{noitemsep}
+
+%% Make itemize deeper.
+\renewlist{itemize}{itemize}{7}
+
+%% Change the labels of items.
+\setlist[itemize,1]{label=•}
+\setlist[itemize,2]{label=–}
+\setlist[itemize,3]{label=‣}
+\setlist[itemize,4]{label=◦}
+\setlist[itemize,5]{label=›}
+\setlist[itemize,6]{label=∗}
+\setlist[itemize,7]{label=·}
+
+%% Make enumerate deeper.
+\renewlist{enumerate}{enumerate}{6}
+
+%% Change the style of enumerate lists.
+\setlist[enumerate,1]{align=left,leftmargin=*,ref=\arabic*,label*=\arabic*.}
+\setlist[enumerate,2]{align=left,ref=\arabic*,label*=\arabic*.}
+\setlist[enumerate,3]{align=left,ref=\arabic*,label*=\arabic*.}
+\setlist[enumerate,4]{align=left,ref=\arabic*,label*=\arabic*.}
+\setlist[enumerate,5]{align=left,ref=\arabic*,label*=\arabic*.}
+\setlist[enumerate,6]{align=left,ref=\arabic*,label*=\arabic*.}
+
+%% An enumeration for the overview.
+\newlist{overenum}{enumerate}{2}
+\setlist*[overenum,1]{noitemsep,align=left,leftmargin=*,label=\Roman*.}
+\setlist*[overenum,2]{noitemsep,resume,widest=00,align=left,leftmargin=*,label=\arabic*.}
+
+%% Inline enumerations for in-paragraph lists like (i) …, (ii) …, and (iii) ….
+\newlist{inlineenum}{enumerate*}{1}
+\setlist*[inlineenum,1]{label={(\roman*)},
+				itemjoin={{, }},
+				itemjoin*={{, and }},
+				afterlabel={~}}
+
+%% Unnumbered inline lists.
+\newlist{inlinelist}{itemize*}{1}
+\setlist*[inlinelist,1]{label={},
+				itemjoin={{, }},
+				itemjoin*={{, }},
+				afterlabel={}}
+
+%% Stupid example enumeration for inside a quote.
+\newlist{quenum}{enumerate}{2}
+\setlist[quenum,1]{noitemsep,align=left,leftmargin=*,label=(\arabic)}
+\setlist[quenum,2]{noitemsep,align=left,leftmargin=*,label=\alph.}
+
+%% Specialized description environment for morpheme lists.
+\newlist{morphdesc}{description}{1}
+\setlist[morphdesc]{font={\normalfont},
+	style=sameline,
+	labelindent=0pt,
+	labelwidth=3em,
+	leftmargin=!,
+	itemsep=0.5\baselineskip}

@@ -1,0 +1,199 @@
+%!TEX root = ../lingnote-verbmorphs.tex
+%!TEX encoding = UTF-8 Unicode
+%%
+%% Fontspec and font loading and configuration.
+%%
+
+%% XeLaTeX font support.
+\usepackage{fontspec}
+\usepackage{xltxtra}
+
+%% To interrogate a font for its features use ‘otfinfo -f’.
+
+%% The basic text font is the roman font.
+%\setromanfont{Brill}[Path=./fonts/,
+%  Extension      = .ttf,
+%  UprightFont    = *-Roman,
+%  BoldFont       = *-Bold,
+%  ItalicFont     = *-Italic,
+%  BoldItalicFont = *-BoldItalic]
+%\setromanfont{Cambria.ttc}[Path=./fonts/,
+%  UprightFeatures    = {FontIndex=0},
+%  BoldFont           = Cambriab.ttf,
+%  ItalicFont         = Cambriai.ttf,
+%  BoldItalicFont     = Cambriaz.ttf,
+%  Ligatures = Common,
+%  Numbers = OldStyle]
+\setromanfont{LibertinusSerif}[Path=./fonts/,
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Ligatures      = Common,
+  Numbers        = OldStyle]
+%\setromanfont{CharisSIL}[Path=./fonts/,
+%  Extension      = .ttf,
+%  UprightFont    = *-Regular,
+%  ItalicFont     = *-Italic,
+%  BoldFont       = *-Bold,
+%  BoldItalicFont = *-BoldItalic,
+%  Ligatures      = Common,
+%  Numbers        = OldStyle]
+
+%% Settings for all other fonts.
+%% - MatchLowercase resizes to match the x-height of the roman font.
+\defaultfontfeatures{Scale=MatchLowercase}
+
+%% The sans-serif counterpart to the roman font.
+%\setsansfont{Calibri}[Path=./fonts/,
+%  Extension      = .ttf,
+%  UprightFont    = *,
+%  BoldFont       = *b,
+%  ItalicFont     = *i,
+%  BoldItalicFont = *z,
+%  Ligatures      = Common,
+%  LetterSpace    = -0.1]
+%\setsansfont{LibertinusSans}[Path=./fonts/,
+%  Extension      = .otf,
+%  UprightFont    = *-Regular,
+%  ItalicFont     = *-Italic,
+%  BoldFont       = *-Bold,
+%  BoldItalicFont = *-Italic,
+%  Ligatures      = Common,
+%  Scale          = 1]
+\setsansfont{SourceSans3}[Path=./fonts/,
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-It,
+  BoldFont       = *-Semibold,
+  BoldItalicFont = *-SemiboldIt,
+  Ligatures      = Common,
+%  Numbers        = Lining,
+  Scale          = 0.95]
+
+%% The monospace counterpart to the roman font.
+\setmonofont{Consolas}[Path=./fonts/,
+  Extension      = .ttf,
+  UprightFont    = consola,
+  ItalicFont     = consolai,
+  BoldFont       = consolab,
+  BoldItalicFont = consolaz,
+  FakeStretch    = 0.9]
+
+%%
+%% Special transformations derived from the base font.
+%%
+
+%% Condensed version of roman font.
+%\newfontfamily{\romancondensedfont}{Brill}[Path=./fonts/,
+%  Extension      = .ttf,
+%  UprightFont    = *-Roman,
+%  BoldFont       = *-Bold,
+%  ItalicFont     = *-Italic,
+%  BoldItalicFont = *-BoldItalic,
+%  FakeStretch    = 0.94]
+\newfontfamily{\romancondensedfont}{LibertinusSerif}[Path=./fonts/,
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Ligatures       = Common,
+  Numbers         = OldStyle,
+  FakeStretch     = 0.94]
+
+%% Gloss abbreviations.
+%\newfontfamily{\glossfont}{Brill}[Path=./fonts/,
+%  Extension      = .ttf,
+%  UprightFont    = *-Roman,
+%  BoldFont       = *-Bold,
+%  ItalicFont     = *-Italic,
+%  BoldItalicFont = *-BoldItalic,
+%  FakeStretch    = 0.9]
+\newfontfamily{\glossfont}{LibertinusSerif}[Path=./fonts/,
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Ligatures       = Common,
+  Numbers         = OldStyle,
+  FakeStretch     = 0.9]
+
+%%
+%% Special fonts.
+%%
+
+%% Some of these font definitions are used by stuff in the
+%% \FILEPREFIX-fonts-symbols.tex file that gets loaded after
+%% this file.
+
+%% Phonetics.
+%\newfontfamily{\ipafont}{Charis SIL Compact}
+\newfontfamily{\ipafont}{CharisSIL}[Path=./fonts/,
+  Extension      = .ttf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Ligatures      = Common]
+
+
+%% This font is for unusual phonetic symbols that might not
+%% be available in the ipafont.
+%\newfontfamily{\phonfont}{Charis SIL Compact}
+\newfontfamily{\phonfont}{CharisSIL}[Path=./fonts/,
+  Extension      = .ttf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Ligatures      = Common]
+
+%% This font is for mathematical symbols.
+%%
+%% Don't call it \mathfont because other packages use that name.
+%% You have been warned.
+%\newfontfamily{\mthfont}{Asana Math}
+\newfontfamily{\mthfont}{Asana-Math.ttf}[Path=./fonts/]
+
+%% This font is for calligraphic script math symbols.
+%\newfontfamily{\mthcalfont}{XITS Math}
+\newfontfamily{\mthcalfont}{XITSMath}[Path=./fonts/,
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Regular,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-Bold]
+
+%% This font is for the variant slashed zero form of U+2205 ∅ Empty Set.
+%% 
+%% There is only a regular and bold version of this font so we fake italics.
+%\newfontfamily{\nullzerofont}{STIXVar}[Path=./fonts/,
+%  Extension          = .otf,
+%  UprightFont        = STIXVar,
+%  Scale              = 1,
+%  AutoFakeSlant      = 0.13,
+%  BoldFont           = STIXVarBol,
+%  BoldItalicFont     = STIXVarBol,
+%  BoldItalicFeatures = {FakeSlant=0.13}]
+\newfontfamily{\nullzerofont}{LibertinusSerif}[Path=./fonts/,
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-Bold,
+  BoldItalicFont = *-BoldItalic,
+  Ligatures       = Common,
+  Numbers         = SlashedZero]
+
+%% This font is for the check mark and ex mark for good and bad things.
+%%
+%% There is only a regular version of this font and we don’t want any
+%% other forms so we use the same -Regular for all shapes.
+\newfontfamily{\checkexfont}{NotoSansSymbols2}[Path=./fonts/,
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Regular,
+  BoldFont       = *-Regular,
+  BoldItalicFont = *-Regular]
