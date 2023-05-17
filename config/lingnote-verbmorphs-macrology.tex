@@ -266,7 +266,31 @@
 \ProvideDocumentCommand \versus {} {\newline\hspace*{\versuslength}versus~}
 \newlength{\lindentlength}
 \setlength{\lindentlength}{1.5em}
+%% Morpheme list indentation commands.
+%% The \lindent provides the basic indentation, others give various text.
 \ProvideDocumentCommand \lindent {m} {\newline\hspace*{\lindentlength}#1}
+%\ProvideDocumentCommand \using {m} {\lindent{using~#1}}
+\ProvideDocumentCommand \using {m} {using~#1}
 \ProvideDocumentCommand \morphemes {m} {\lindent{with~#1}}
 \ProvideDocumentCommand \andnot {s m} {\lindent{(\IfBooleanTF{#1}{and~}{}not~#2})}
 \ProvideDocumentCommand \notealso {m} {\lindent{#1}}
+
+%% Macro for presenting a particular verb form.
+\ProvideDocumentCommand \vbform {o m m o m}
+	% 1: judgement
+	% 2: verb form
+	% 3: aspect of verb form
+	% 4: lexical properties (optional)
+	% 5: translation
+	{\fm[#1]{#2} (#3\IfNoValueOrEmptyTF{#4}{}{; #4}) ‘#5’}
+
+%% Macro for doing aligned column segmentations and glosses for specific forms.
+%% FIXME: The hyphenpenalty is a hack to deal with a bug in XeTeX. Delete when fixed.
+\ProvideDocumentCommand \vbmorph {m m}
+	{\lindent{with~}%
+	\begin{tblr}{baseline=T, rowsep=0.0625ex, colsep=0.375ex,
+		row{1} = {font=\itshape, cmd=\exhyphenpenalty10000},
+		row{2} = {font=\romancondensedfont\small}}
+	#1\\
+	#2\\
+	\end{tblr}}
