@@ -299,7 +299,10 @@ TSWLatexianTemp*
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
+
+# macOS crud
 fonts/.DS_Store
 .DS_Store
+
+# Don't include the pdf output document.
 lingnote-verbmorphs.pdf
-*.pdf
