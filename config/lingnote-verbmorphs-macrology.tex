@@ -311,3 +311,9 @@
 	% 2: lexical properties
 	% 3: translation
 	{\fm{#1} (#2) ‘#3’}
+
+%% Hyperref crossreference macro.
+\ProvideDocumentCommand \X {o m}
+	% 1: label
+	% 2: text
+	{\textcolor{blue}{\IfNoValueOrEmptyTF{#1}{\hyperref[m:#2]{#2}}{\hyperref[m:#1]{#2}}}}
