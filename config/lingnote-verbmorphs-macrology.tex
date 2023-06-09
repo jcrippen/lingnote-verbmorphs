@@ -285,15 +285,25 @@
 	{\fm[#1]{#2} (#3\IfNoValueOrEmptyTF{#4}{}{; #4}) ‘#5’}
 
 %% Macro for doing aligned column segmentations and glosses for specific forms.
-%% FIXME: The hyphenpenalty is a hack to deal with a bug in XeTeX. Delete when fixed.
+%%
+%% Tried using tabularray (tblr) but it was painfully slow with a large document.
+%% Instead this solution uses TikZ matrices. But using & in an argument won’t work
+%% because TikZ can't make the ampersand active as explained here:
+%%   https://tex.stackexchange.com/q/1111
+%% The fix is to rescan the input as detailed here:
+%%   https://tex.stackexchange.com/a/619983
+%% Although this is slow, it's still much faster than tabularray. The solution
+%% using LaTeX3 doesn't work but I don't know why and didn't try to figure it out.
 \ProvideDocumentCommand \vbmorph {m m}
 	{\lindent{with~}%
-	\begin{tblr}{baseline=T, rowsep=0.0625ex, colsep=0.375ex,
-		row{1} = {font=\itshape, cmd=\exhyphenpenalty10000},
-		row{2} = {font=\romancondensedfont\small}}
-	#1\\
-	#2\\
-	\end{tblr}}
+	\begingroup\catcode`\&=\active
+	\begin{tikzpicture}[inner sep=0.25em, outer sep=0.25em, baseline=(X-1-1.base)]
+		\matrix(X)[matrix of nodes, glossmx]{
+			\scantokens{#1}\\
+			\scantokens{#2}\\
+		};
+	\end{tikzpicture}
+	\endgroup}
 
 %% Macro for presenting a motion derivation.
 \ProvideDocumentCommand \motderiv {m m m}

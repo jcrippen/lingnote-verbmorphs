@@ -4,13 +4,13 @@
 %%
 
 %% Pretty pictures.
-%\usepackage{tikz}
+\usepackage{tikz}
 %\usetikzlibrary{calc}
 %\usetikzlibrary{arrows.meta}
-%\usetikzlibrary{matrix}
+\usetikzlibrary{matrix}
 %\usetikzlibrary{decorations.pathreplacing}
 %\usetikzlibrary{decorations.pathmorphing}
-%\usetikzlibrary{backgrounds}
+\usetikzlibrary{backgrounds}
 %\usetikzlibrary{positioning}
 %\usetikzlibrary{shapes.geometric}
 %\usetikzlibrary{shapes.symbols}
@@ -52,3 +52,10 @@
 %\tikzset{dashbranch2em/.style={dash pattern={on 0.75em
 %off 2pt on 2pt off 2pt on 2pt off 2pt on 2pt off 2pt
 %on 0.75em}}}
+
+% Gloss matrix style.
+\tikzset{glossmx/.style={row sep=0.25em,
+			column sep=0.25em,
+			row 1/.style={font=\itshape},
+			row 2/.style={font=\romancondensedfont\small},
+			every node/.style={anchor=base west, inner sep=0pt, outer sep=0pt}}}
