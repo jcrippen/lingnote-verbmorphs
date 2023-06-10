@@ -317,8 +317,14 @@
 	% 3: translation
 	{\fm{#1} (#2) ‘#3’}
 
-%% Hyperref crossreference macro.
+%% Hyperref crossreference command.
+%%
+%% Assumes a label (defined with LaTeX \label) that has a prefix "m:". By assuming
+%% this the insertion of crossreferences for morphemes is more compact and cannot be
+%% mistaken for other types of crossreference.
+%%
+%% See config/…-colours.tex for the \Xc colouring command and the Xcolor defined there.
 \ProvideDocumentCommand \X {o m}
 	% 1: label
 	% 2: text
-	{\textcolor{blue}{\IfNoValueOrEmptyTF{#1}{\hyperref[m:#2]{#2}}{\hyperref[m:#1]{#2}}}}
+	{\textit{\Xc{\IfNoValueOrEmptyTF{#1}{\hyperref[m:#2]{#2}}{\hyperref[m:#1]{#2}}}}}
