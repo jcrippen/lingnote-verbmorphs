@@ -297,15 +297,16 @@
 %%   https://tex.stackexchange.com/a/619983
 %% Although this is slow, it's still much faster than tabularray. The alternative
 %% with LaTeX3 doesn't work but I don't know why and didn't try to figure it out.
-\ProvideDocumentCommand \vbmorph {m m}
-	% 1: first row of gloss, columns separated by &
-	% 2: second row of gloss, columns separated by &
-	{\lindent{with~}%
+\ProvideDocumentCommand \vbmorph {s m m}
+	% 1: star, if true then don't \lindent and instead just say "with~"
+	% 2: first row of gloss, columns separated by &
+	% 3: second row of gloss, columns separated by &
+	{\IfBooleanTF{#1}{with~}{\lindent{with~}}%
 	\begingroup\catcode`\&=\active
 	\begin{tikzpicture}[inner sep=0.25em, outer sep=0.25em, baseline=(X-1-1.base)]
 		\matrix(X)[matrix of nodes, glossmx]{
-			\scantokens{#1}\\
 			\scantokens{#2}\\
+			\scantokens{#3}\\
 		};
 	\end{tikzpicture}
 	\endgroup}
