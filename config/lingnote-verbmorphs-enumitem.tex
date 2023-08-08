@@ -26,11 +26,26 @@
 
 %% Change the style of enumerate lists.
 \setlist[enumerate,1]{align=left,leftmargin=*,itemsep=0.25\baselineskip,ref=\arabic*,label*=\arabic*.}
-\setlist[enumerate,2]{align=left,ref=\arabic*,label*=\arabic*.}
-\setlist[enumerate,3]{align=left,ref=\arabic*,label*=\arabic*.}
-\setlist[enumerate,4]{align=left,ref=\arabic*,label*=\arabic*.}
-\setlist[enumerate,5]{align=left,ref=\arabic*,label*=\arabic*.}
-\setlist[enumerate,6]{align=left,ref=\arabic*,label*=\arabic*.}
+%\setlist[enumerate,2]{align=left,ref=\arabic*,label*=\arabic*.}
+%\setlist[enumerate,3]{align=left,ref=\arabic*,label*=\arabic*.}
+%\setlist[enumerate,4]{align=left,ref=\arabic*,label*=\arabic*.}
+%\setlist[enumerate,5]{align=left,ref=\arabic*,label*=\arabic*.}
+%\setlist[enumerate,6]{align=left,ref=\arabic*,label*=\arabic*.}
+\setlist[enumerate,2]{align=left,
+	label*={\arabic*.},
+	ref={\arabic{enumi}.\arabic*}}
+\setlist[enumerate,3]{align=left,
+	label*={\arabic*.},
+	ref={\arabic{enumi}.\arabic{enumii}.\arabic*}}
+\setlist[enumerate,4]{align=left,
+	label*={\arabic*.},
+	ref={\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic*}}
+\setlist[enumerate,5]{align=left,
+	label*={\arabic*.},
+	ref={\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.\arabic*}}
+\setlist[enumerate,6]{align=left,
+	label*={\arabic*.},
+	ref={\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}.\arabic{enumv}.\arabic*}}
 
 %% An enumeration for the overview.
 \newlist{overenum}{enumerate}{2}
