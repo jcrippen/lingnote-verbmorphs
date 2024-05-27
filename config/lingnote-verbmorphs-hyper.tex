@@ -8,10 +8,16 @@
 \usepackage{url}
 \urlstyle{sf}
 
+%% Hyperlinks.
+%%
+%% Hyperref controls the colours of links (citations, URLs, etc.) which are produced by BibLaTeX.
+%% To turn off colouring completely, set both colorlinks=false and pdfborder={0 0 0}.
+\usepackage[unicode=true,pdfencoding=auto,psdextra]{hyperref}
+
 %% HyperXMP.
 %%
 %% This package supports the encoding of Adobe’s XMP metadata in documents via hyperref.
-%% Since it modifies hyperref it needs to be loaded before that package.
+%% As of TeX Live 2023 this must be loaded after hyperref but before hypersetup below.
 %%
 %% Note: “the xdvipdfmx back end compresses all pdf objects, including the ones containing
 %%   XMP metadata. While Adobe Acrobat can still detect and utilize the XMP metadata,
@@ -23,11 +29,6 @@
 %%   re-saving it with the Save As… menu option.”
 \usepackage{hyperxmp}
 
-%% Hyperlinks.
-%%
-%% Hyperref controls the colours of links (citations, URLs, etc.) which are produced by BibLaTeX.
-%% To turn off colouring completely, set both colorlinks=false and pdfborder={0 0 0}.
-\usepackage[unicode=true,pdfencoding=auto,psdextra]{hyperref}
 %% Hyperref configuration. There are good reasons for this to be separate from the
 %% \usepackage invocation above.
 \hypersetup{%
@@ -73,11 +74,11 @@
 	% How deep bookmarks should be open by default.
 	bookmarksopenlevel=4,
 	%% HyperXMP stuff.
-	pdftitle={Tlingit grammar outline},
+	pdftitle={Tlingit verb morpheme catalogue},
 	pdfauthor={James A. Crippen},
-	pdfcopyright={Copyright © 2021 James A. Crippen},
+	pdfcopyright={Copyright © 2024 James A. Crippen},
 	pdfsubject={Tlingit language},
-	pdfkeywords={grammar, phonology, morphology, syntax, semantics, Na-Dene, Tlingit},
+	pdfkeywords={grammar, morphology, semantics, Na-Dene, Tlingit},
 	pdfcaptionwriter={James A. Crippen},
 	pdfcontactaddress={McGill Linguistics, 1085 Dr. Penfield},
 	pdfcontactcity={Montreal},
